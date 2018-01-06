@@ -79,7 +79,7 @@ public class SendMail implements SendMailLocal {
 
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("librosykekas@gmail.com", "junioari17");
+                return new PasswordAuthentication("makegarcia57@gmail.com", "junioari17");
             }
 
         });
