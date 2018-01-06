@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.usuarioLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.PantallaLocal"/>
+    <fullyQualifiedTypeName name="javax.ejb.Remote"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Usuario"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Pantalla"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.ServletSecurity"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.HttpConstraint"/>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.HttpMethodConstraint"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.categoriaLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.categoriaLocal"/>
+    <fullyQualifiedTypeName name="javax.ejb.TransactionAttribute"/>
+    <fullyQualifiedTypeName name="javax.ejb.TransactionAttributeType"/>
+    <fullyQualifiedTypeName name="java.util.Hashtable"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
+    <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal"/>
+    <fullyQualifiedTypeName name="javax.persistence.Query"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
+    <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.SendMailLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Categoria"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.EditorialFab"/>
+    <fullyQualifiedTypeName name="javax.ejb.Local"/>
+</qualifiedTypeNameHistroy>

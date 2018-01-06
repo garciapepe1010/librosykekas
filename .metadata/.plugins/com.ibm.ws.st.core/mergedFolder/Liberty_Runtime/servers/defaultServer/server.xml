@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<server description="Liberty beta">
+  <featureManager>
+            
+    <feature>webProfile-8.0</feature>
+            
+    <feature>adminCenter-1.0</feature>
+            
+    <feature>restConnector-2.0</feature>
+            
+    <feature>transportSecurity-1.0</feature>
+            
+    <feature>microProfile-1.2</feature>
+            
+    <feature>audit-1.0</feature>
+            
+    <feature>bluemixLogCollector-1.1</feature>
+            
+    <feature>logstashCollector-1.1</feature>
+            
+    <feature>validator-1.0</feature>
+            
+    <feature>localConnector-1.0</feature>
+        	
+    <feature>javaee-8.0</feature>
+        	
+    <feature>jsp-2.2</feature>
+    	
+  </featureManager>
+  <keyStore id="defaultKeyStore" password="keyStorePwd"/>
+  <basicRegistry id="basic">
+          
+    <user name="admin" password="adminpwd"/>
+          
+    <user name="nonadmin" password="nonadminpwd"/>
+          
+    <user name="librosykekasadmin" password="morrigan12"/>
+             
+    <group name="librosykekasadmin">
+      			
+      <member name="librosykekasadmin"/>
+      		
+    </group>
+       
+  </basicRegistry>
+  <administrator-role>
+          
+    <user>admin</user>
+       
+  </administrator-role>
+  <httpEndpoint httpPort="9080" httpsPort="9443" id="defaultHttpEndpoint"/>
+  <applicationManager autoExpand="true"/>
+  <library id="ojdbc4jLib">
+        	
+    <fileset dir="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/" includes="ojdbc8.jar"/>
+    	
+  </library>
+  <dataSource id="db2xa" jndiName="jdbc/db2xa" type="javax.sql.XADataSource">
+        	
+    <jdbcDriver libraryRef="ojdbc4jLib"/>
+        	 
+    <properties.oracle URL="jdbc:oracle:thin:librosykekas/morrigan12@//192.168.1.50:1521/XE"/>
+        	 
+    <containerAuthData password="morrigan12" user="librosykekas"/>
+    	
+  </dataSource>
+  <applicationMonitor updateTrigger="mbean"/>
+  <enterpriseApplication id="librosykekas" location="librosykekas.ear" name="librosykekas"/>
+</server>

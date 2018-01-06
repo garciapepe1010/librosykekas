@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <archive targetInArchive="/lib/librosykekasJPA.jar">
+        <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasJPA/build/classes" targetInArchive="/"/>
+    </archive>
+    <archive targetInArchive="/librosykekasEJB.jar">
+        <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasEJB/build/classes" targetInArchive="/"/>
+    </archive>
+    <archive targetInArchive="/librosykekasEJBClient.jar">
+        <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasEJBClient/build/classes" targetInArchive="/"/>
+    </archive>
+    <archive targetInArchive="/librosykekasWEB.war">
+        <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasWEB/WebContent" targetInArchive="/"/>
+    </archive>
+    <archive targetInArchive="/librosykekasAdmWEB.war">
+        <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasAdmWEB/WebContent" targetInArchive="/"/>
+    </archive>
+    <dir sourceOnDisk="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekas" targetInArchive="/"/>
+</archive>

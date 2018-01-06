@@ -1,0 +1,13 @@
+<conflicts>
+    <conflict>
+        <conflictChain>
+            <feature>com.ibm.websphere.appserver.jsp-2.2</feature>
+        </conflictChain>
+    
+        <conflictChain>
+            <feature>com.ibm.websphere.appserver.webProfile-8.0</feature>
+        
+            <feature>com.ibm.websphere.appserver.jsp-2.3</feature>
+        </conflictChain>
+    </conflict>
+</conflicts>

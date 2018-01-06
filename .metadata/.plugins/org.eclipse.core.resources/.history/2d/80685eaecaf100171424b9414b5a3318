@@ -1,0 +1,94 @@
+package com.adnaloy.librosykekas.basics;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
+
+import com.adnaloy.librosykekas.basics.interfaces.ItemLocal;
+
+/**
+ * Session Bean implementation class Libro
+ */
+@Stateless(mappedName = "libro")
+@LocalBean
+public class Item implements ItemLocal{
+	
+	@PersistenceContext(unitName="librosykekasJPA", type = PersistenceContextType.TRANSACTION)	
+	private EntityManager manager;
+
+    
+	
+	private String code;
+	private String titulo;
+	private String resena;
+	private String editorial;
+	private String comentario;
+	
+	
+	/**
+     * Default constructor. 
+     */
+	
+	public Item() {
+        // TODO Auto-generated constructor stub
+    }
+	
+	
+	
+    public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getResena() {
+		return resena;
+	}
+
+	public void setResena(String resena) {
+		this.resena = resena;
+	}
+
+	public String getEditorial() {
+		return editorial;
+	}
+
+	public void setEditorial(String editorial) {
+		this.editorial = editorial;
+	}
+
+	public String getComentario() {
+		return comentario;
+	}
+
+	public void setComentario(String comentario) {
+		this.comentario = comentario;
+	}
+
+	@TransactionAttribute(TransactionAttributeType.REQUIRED)
+	public void anado() {
+		com.adnaloy.librosykekas.librosykekasJPA.Item libroJPA = new com.adnaloy.librosykekas.librosykekasJPA.Item();
+		com.adnaloy.librosykekas.librosykekasJPA.Categoria cat = new com.adnaloy.librosykekas.librosykekasJPA.Categoria();
+
+		//libroJPA.setCategoría();
+		
+	    //tx.begin();
+	    //manager.persist(EdFabJPA);
+	    //tx.commit();
+	}
+
+}
