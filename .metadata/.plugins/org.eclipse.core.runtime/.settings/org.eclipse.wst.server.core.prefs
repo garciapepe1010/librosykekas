@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+module-start-timeout=300000
+runtimes=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?>\n<runtimes>\n  <runtime id\="Liberty_Runtime" id-set\="true" location\="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/wlp" name\="Liberty_Runtime" runtime-type-id\="com.ibm.ws.st.runtime.wlp" timestamp\="0"/>\n</runtimes>\n

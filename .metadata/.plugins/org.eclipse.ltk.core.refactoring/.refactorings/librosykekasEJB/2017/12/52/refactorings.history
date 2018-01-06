@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;categoriaLocal.java, categoriaRemote.java&apos; to &apos;interfaces&apos;" description="Move 2 resources to &apos;interfaces&apos;" destination="ejbModule/com/adnaloy/librosykekas/basics/interfaces" element1="ejbModule/com/adnaloy/librosykekas/basics/categoriaLocal.java" element2="ejbModule/com/adnaloy/librosykekas/basics/categoriaRemote.java" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="2" stamp="1514452802745" updateReferences="true"/>
+</session>

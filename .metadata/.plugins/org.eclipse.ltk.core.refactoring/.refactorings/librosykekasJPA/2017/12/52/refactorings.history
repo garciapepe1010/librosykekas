@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;librosykekasJPA/src/com/adnaloy/librosykekas/librosykekasJPA/Categoría.java&apos; to &apos;Categoria.java&apos;" description="Rename resource &apos;Categoría.java&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/com/adnaloy/librosykekas/librosykekasJPA/Categoría.java" name="Categoria.java" stamp="1514673146545" updateReferences="true"/>
+</session>

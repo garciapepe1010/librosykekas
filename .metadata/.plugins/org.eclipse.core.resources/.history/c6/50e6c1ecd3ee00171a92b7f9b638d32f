@@ -1,0 +1,16 @@
+package com.adnaloy.librosykekas.librosykekasJPA;
+
+import javax.annotation.Generated;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
+
+@Generated(value="Dali", date="2017-12-31T00:19:09.098+0100")
+@StaticMetamodel(Item.class)
+public class Item_ {
+	public static volatile SingularAttribute<Item, String> code;
+	public static volatile SingularAttribute<Item, String> comentario;
+	public static volatile SingularAttribute<Item, String> resena;
+	public static volatile SingularAttribute<Item, String> titulo;
+	public static volatile SingularAttribute<Item, Categoria> categoria;
+	public static volatile SingularAttribute<Item, EditorialFab> editorialFab;
+}

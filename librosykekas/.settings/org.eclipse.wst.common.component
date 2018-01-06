@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+            
+    
+    <wb-module deploy-name="librosykekas">
+                        
+        
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+                
+        <dependent-module archiveName="librosykekasJPA.jar" deploy-path="/lib" handle="module:/resource/librosykekasJPA/librosykekasJPA">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+        <dependent-module archiveName="librosykekasEJB.jar" deploy-path="/" handle="module:/resource/librosykekasEJB/librosykekasEJB">
+            <dependent-object>Module_1514384304529</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="librosykekasEJBClient.jar" deploy-path="/" handle="module:/resource/librosykekasEJBClient/librosykekasEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="librosykekasWEB.war" deploy-path="/" handle="module:/resource/librosykekasWEB/librosykekasWEB">
+            <dependent-object>Module_1514384362658</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="librosykekasAdmWEB.war" deploy-path="/" handle="module:/resource/librosykekasAdmWEB/librosykekasAdmWEB">
+            <dependent-object>Module_1514384404338</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                    
+    
+    </wb-module>
+        
+
+</project-modules>
