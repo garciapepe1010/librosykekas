@@ -8551,3 +8551,9 @@ java.lang.NullPointerException
 	at com.ibm.etools.annotations.core.internal.search.JavaSearchUtils.findAnnotations(JavaSearchUtils.java:848)
 	at com.ibm.etools.annotations.core.internal.listeners.TriggerAnnotationListenerImpl$IndexingJob.run(TriggerAnnotationListenerImpl.java:747)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+
+!ENTRY org.eclipse.wst.common.project.facet.core 2 0 2018-01-06 16:16:54.839
+!MESSAGE The ">", ">=", "<", and "<=" notation in version expressions has been deprecated. Note that the angle brackets are represented via "&lt;" and "&gt;" in the plugin.xml files. The functionality has been replaced with range notation. For instance "[X-Y)" means all versions greater or equals to X and less than Y. Open ranges such as "(X" or "Y]" are also allowed.
+
+Expression: >=3.0
+Project facet: EJB Module
