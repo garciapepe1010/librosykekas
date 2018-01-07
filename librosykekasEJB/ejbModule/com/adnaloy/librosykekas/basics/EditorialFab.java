@@ -115,7 +115,7 @@ public class EditorialFab implements EditorialFabLocal {
 	}
 	
 	@TransactionAttribute(TransactionAttributeType.NEVER)
-	public EditorialFab buscaEditorialFab() {
+	public EditorialFabLocal buscaEditorialFab() {
 		com.adnaloy.librosykekas.librosykekasJPA.EditorialFab uno = manager.find(com.adnaloy.librosykekas.librosykekasJPA.EditorialFab.class, code);
 
 		this.setDireccion(uno.getDireccion());

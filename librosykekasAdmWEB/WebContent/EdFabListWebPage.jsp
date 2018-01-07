@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.jsp">Binary admin</a> 
+                <a class="navbar-brand" href="index.jsp">Administrador librosykekas</a> 
             </div>
   <div style="color: white;
 padding: 15px 50px 5px 50px;
@@ -67,8 +67,8 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                     <h2>Table Examples</h2>   
-                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                     <h2>Mant. Ed. Fab.</h2>   
+                        <h5>Bienvenida tata. Me alegro de verte de nuevo.</h5>
                        
                     </div>
                 </div>

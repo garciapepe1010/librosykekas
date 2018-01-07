@@ -16,7 +16,7 @@ import javax.persistence.Query;
 import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
 
 
-@Stateless(mappedName = "categoria")
+@Stateless(mappedName = "Categoria")
 @LocalBean
 public class Categoria implements  CategoriaLocal{
 	
@@ -99,7 +99,7 @@ public class Categoria implements  CategoriaLocal{
 	}
 	
 	@TransactionAttribute(TransactionAttributeType.NEVER)
-	public Categoria buscaCategoria() {
+	public CategoriaLocal buscaCategoria() {
 		com.adnaloy.librosykekas.librosykekasJPA.Categoria uno = manager.find(com.adnaloy.librosykekas.librosykekasJPA.Categoria.class, clave);
 
 		this.setNombre(uno.getNombre());

@@ -39,9 +39,10 @@ public class CategoriaWebPage extends HttpServlet {
 		
 		List efs = ef.findAllCategorias();
 		
-		request.setAttribute("ListaEditFab", efs);
+		request.setAttribute("ListaCategoria", efs);
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EdFabListWebPage.jsp");
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CategoriaListWebPage.jsp");
         dispatcher.forward(request, response);
 	}
 
@@ -50,7 +51,110 @@ public class CategoriaWebPage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
+		
+		String destino = "/CategoriaEditWebPage.jsp";
+		
+		String accion = request.getParameter("accion");
+		String cod = request.getParameter("clave");
+		
+		if("E".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaCategoria();
+			
+			request.setAttribute("Categoria", ef);
+			request.setAttribute("CategoriaAccion","E");
+			
+			destino = "/CategoriaEditWebPage.jsp";
+			
+		}else if("A".equals(accion)) {
+			
+			request.setAttribute("Categoria", ef);
+			request.setAttribute("CategoriaAccion","A");
+			
+			destino = "/CategoriaEditWebPage.jsp";
+			
+		}else if("X".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaCategoria();
+			
+			request.setAttribute("Categoria", ef);
+			request.setAttribute("CategoriaAccion","X");
+			
+			destino = "/CategoriaEditWebPage.jsp";
+			
+		}else if("D".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaCategoria();
+			
+			request.setAttribute("Categoria", ef);
+			request.setAttribute("CategoriaAccion","D");
+			
+			destino = "/CategoriaEditWebPage.jsp";
+			
+		}else if("XE".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaCategoria();
+			
+			ef.setNombre(request.getParameter("nombre"));
+			
+			ef.actualizo();
+			
+			ef.reset();
+			
+			List efs = ef.findAllCategorias();
+			
+			request.setAttribute("ListaCategoria", efs);
+			
+			destino = "/CategoriaListWebPage.jsp";
+			
+		}else if("XA".equals(accion)) {
+			
+			ef.setNombre(request.getParameter("nombre"));
+			
+			ef.anado();
+			
+			ef.reset();
+			
+			List efs = ef.findAllCategorias();
+			
+			request.setAttribute("ListaCategoria", efs);
+			
+			destino = "/CategoriaListWebPage.jsp";
+			
+		}else if("XX".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaCategoria();
+			ef.elimino();
+			
+			ef.reset();
+			
+			List efs = ef.findAllCategorias();
+			
+			request.setAttribute("ListaCategoria", efs);
+			
+			destino = "/CategoriaListWebPage.jsp";
+			
+		}else if("XD".equals(accion)) {
+			
+			ef.setNombre(request.getParameter("nombre"));
+			
+			ef.actualizo();
+			
+			List efs = ef.findAllCategorias();
+			
+			request.setAttribute("ListaCategoria", efs);
+			
+			destino = "/CategoriaListWebPage.jsp";
+		}
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destino);
+        dispatcher.forward(request, response);
 	}
 
 }

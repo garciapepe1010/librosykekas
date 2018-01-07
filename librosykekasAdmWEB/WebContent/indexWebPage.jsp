@@ -64,7 +64,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                 <div class="row">
                     <div class="col-md-12">
                      <h2>Mant. Index</h2>   
-                        <h5>Hola Jhon Deo , Encantado de verte de nuevo. <br></h5>
+                        <h5>Bienvenida tata. Me alegro de verte de nuevo.</h5>
                        
                     </div>
                 </div>

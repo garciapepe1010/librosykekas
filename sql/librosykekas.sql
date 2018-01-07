@@ -1,0 +1,327 @@
+--------------------------------------------------------
+-- Archivo creado  - domingo-enero-07-2018   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ACERCADE_PAGE_WEB
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."ACERCADE_PAGE_WEB" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"ACERCADE" VARCHAR2(2000 BYTE), 
+	"AUNMAS" VARCHAR2(2000 BYTE), 
+	"VIAJES" VARCHAR2(500 BYTE), 
+	"LIBROS" VARCHAR2(500 BYTE), 
+	"KEKAS" VARCHAR2(500 BYTE), 
+	"INQUIETUDES" VARCHAR2(500 BYTE), 
+	"HISTORIA" VARCHAR2(4000 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table CATEGORIA
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."CATEGORIA" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"NOMBRE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EDITORIAL_FAB
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" 
+   (	"CODE" VARCHAR2(20 BYTE), 
+	"DIRECCION" VARCHAR2(250 BYTE), 
+	"EMAIL" VARCHAR2(150 BYTE), 
+	"NOMBRE" VARCHAR2(100 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table INDEX_PAGE_WEB
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"IMG_2" VARCHAR2(250 BYTE), 
+	"IMG_3" VARCHAR2(250 BYTE), 
+	"IMG_4" VARCHAR2(250 BYTE), 
+	"IMG_5" VARCHAR2(250 BYTE), 
+	"PRESENTACION" VARCHAR2(250 BYTE), 
+	"COMENTARIO_1" VARCHAR2(250 BYTE), 
+	"COMENTARIO_2" VARCHAR2(250 BYTE), 
+	"COMENTARIO_3" VARCHAR2(250 BYTE), 
+	"IMG_1" VARCHAR2(250 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ITEM
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."ITEM" 
+   (	"CODE" VARCHAR2(20 BYTE), 
+	"RESENA" VARCHAR2(250 BYTE), 
+	"CATEGORIA" VARCHAR2(20 BYTE), 
+	"EDITORIA_FAB" VARCHAR2(20 BYTE), 
+	"TITULO" VARCHAR2(250 BYTE), 
+	"COMENTARIO" VARCHAR2(2000 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PANTALLA
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."PANTALLA" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"NOMBRE" VARCHAR2(150 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table USUARIO
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."USUARIO" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"EMAIL" VARCHAR2(250 BYTE), 
+	"NOMBRE" VARCHAR2(100 BYTE), 
+	"PASSWORD" VARCHAR2(50 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table USUARIO_PANTALLA
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" 
+   (	"USUARIO" VARCHAR2(20 BYTE), 
+	"PANTALLA" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Sequence SEQUENCE_LIBROSYKEKAS
+--------------------------------------------------------
+
+   CREATE SEQUENCE  "LIBROSYKEKAS"."SEQUENCE_LIBROSYKEKAS"  MINVALUE 1 MAXVALUE 99999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+REM INSERTING into LIBROSYKEKAS.ACERCADE_PAGE_WEB
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. ','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnâ€™t listen.
+
+She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+
+Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
+
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnâ€™t listen.
+
+She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.');
+REM INSERTING into LIBROSYKEKAS.CATEGORIA
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.CATEGORIA (CLAVE,NOMBRE) values ('23','Categría 1');
+REM INSERTING into LIBROSYKEKAS.EDITORIAL_FAB
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('1','calle patata','patata.com','esa patata');
+Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('3','calle 3','email3@email.com','Nombre3');
+Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('4','Dirección4','email4@email.com','Nombre4');
+REM INSERTING into LIBROSYKEKAS.INDEX_PAGE_WEB
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTACION,COMENTARIO_1,COMENTARIO_2,COMENTARIO_3,IMG_1) values ('1','libros1.jpg','libros2.jpg','keka2.jpg','keka3.jpg','Soy una enamorada de los libros y las mu&ntilde;ecas.','Comentar&eacute; los libros que he leido o vaya leyendo.','Tengo una colecci&oacute;n de mu&ntilde;ecas y me gusta leer sobre ellas, lo ir&eacute; comentando.','Y porqu&eacute; no mis opiniones acerca de todo lo que me impacta.','keka1.jpg');
+REM INSERTING into LIBROSYKEKAS.ITEM
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('30','reseña11','23','1','titulo1','Comentario1');
+REM INSERTING into LIBROSYKEKAS.PANTALLA
+SET DEFINE OFF;
+REM INSERTING into LIBROSYKEKAS.USUARIO
+SET DEFINE OFF;
+REM INSERTING into LIBROSYKEKAS.USUARIO_PANTALLA
+SET DEFINE OFF;
+--------------------------------------------------------
+--  DDL for Index PK_INDEX_PAGE_WEB
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_INDEX_PAGE_WEB" ON "LIBROSYKEKAS"."INDEX_PAGE_WEB" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_CATEGORIAS
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_CATEGORIAS" ON "LIBROSYKEKAS"."CATEGORIA" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_USUARIO_PANTALLA
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_USUARIO_PANTALLA" ON "LIBROSYKEKAS"."USUARIO_PANTALLA" ("USUARIO", "PANTALLA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_USUARIO
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_USUARIO" ON "LIBROSYKEKAS"."USUARIO" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_ITEM
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_ITEM" ON "LIBROSYKEKAS"."ITEM" ("CODE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_PANTALLA
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_PANTALLA" ON "LIBROSYKEKAS"."PANTALLA" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_ACERCADE_PAGE_WEB
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_ACERCADE_PAGE_WEB" ON "LIBROSYKEKAS"."ACERCADE_PAGE_WEB" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index PK_EDITORIAL_FAB
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_EDITORIAL_FAB" ON "LIBROSYKEKAS"."EDITORIAL_FAB" ("CODE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table EDITORIAL_FAB
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" ADD CONSTRAINT "PK_EDITORIAL_FAB" PRIMARY KEY ("CODE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" MODIFY ("CODE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ACERCADE_PAGE_WEB
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."ACERCADE_PAGE_WEB" ADD CONSTRAINT "PK_ACERCADE_PAGE_WEB" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."ACERCADE_PAGE_WEB" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table USUARIO_PANTALLA
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" ADD CONSTRAINT "PK_USUARIO_PANTALLA" PRIMARY KEY ("USUARIO", "PANTALLA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" MODIFY ("PANTALLA" NOT NULL ENABLE);
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" MODIFY ("USUARIO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table USUARIO
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO" ADD CONSTRAINT "PK_USUARIO" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table PANTALLA
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" ADD CONSTRAINT "PK_PANTALLA" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INDEX_PAGE_WEB
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" ADD CONSTRAINT "PK_INDEX_PAGE_WEB" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ITEM
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."ITEM" ADD CONSTRAINT "PK_ITEM" UNIQUE ("CODE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table CATEGORIA
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" ADD CONSTRAINT "PK_CATEGORIAS" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Ref Constraints for Table ITEM
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."ITEM" ADD CONSTRAINT "FK_ITEM_CATEGORIA" FOREIGN KEY ("CATEGORIA")
+	  REFERENCES "LIBROSYKEKAS"."CATEGORIA" ("CLAVE") ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."ITEM" ADD CONSTRAINT "FK_ITEM_EDITORIAL_FAB" FOREIGN KEY ("EDITORIA_FAB")
+	  REFERENCES "LIBROSYKEKAS"."EDITORIAL_FAB" ("CODE") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table USUARIO_PANTALLA
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" ADD CONSTRAINT "FK_USUARIO_PANTALLA_PANTALLA" FOREIGN KEY ("PANTALLA")
+	  REFERENCES "LIBROSYKEKAS"."PANTALLA" ("CLAVE") ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."USUARIO_PANTALLA" ADD CONSTRAINT "FK_USUARIO_PANTALLA_USUARIO" FOREIGN KEY ("USUARIO")
+	  REFERENCES "LIBROSYKEKAS"."USUARIO" ("CLAVE") ENABLE;

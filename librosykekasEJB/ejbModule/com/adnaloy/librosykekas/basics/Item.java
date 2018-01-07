@@ -15,12 +15,13 @@ import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
 import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
+import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ItemLocal;
 
 /**
  * Session Bean implementation class Libro
  */
-@Stateless(mappedName = "libro")
+@Stateless(mappedName = "Item")
 @LocalBean
 public class Item implements ItemLocal{
 	
@@ -28,19 +29,19 @@ public class Item implements ItemLocal{
 	private EntityManager manager;
 	
 	@EJB(mappedName="Categoria")
-	Categoria cat;
+	CategoriaLocal cat;
 	
 	@EJB(mappedName="EditorialFab")
-	EditorialFab ef;
+	EditorialFabLocal ef;
 
     
 	
 	private String code;
 	private String titulo;
 	private String resena;
-	private EditorialFab editorial;
+	private EditorialFabLocal editorial;
 	private String comentario;
-	private Categoria categoria;
+	private CategoriaLocal categoria;
 	
 	
 	/**
@@ -77,11 +78,11 @@ public class Item implements ItemLocal{
 		this.resena = resena;
 	}
 
-	public EditorialFab getEditorial() {
+	public EditorialFabLocal getEditorial() {
 		return editorial;
 	}
 
-	public void setEditorial(EditorialFab editorial) {
+	public void setEditorial(EditorialFabLocal editorial) {
 		this.editorial = editorial;
 	}
 
@@ -95,12 +96,12 @@ public class Item implements ItemLocal{
 	
 	
 
-	public Categoria getCategoria() {
+	public CategoriaLocal getCategoria() {
 		return categoria;
 	}
 
 
-	public void setCategoria(Categoria categoria) {
+	public void setCategoria(CategoriaLocal categoria) {
 		this.categoria = categoria;
 	}
 
@@ -180,26 +181,30 @@ public class Item implements ItemLocal{
 	}
 	
 	@TransactionAttribute(TransactionAttributeType.NEVER)
-	public Item buscaEditorialFab() {
+	public ItemLocal buscaItem() {
 		com.adnaloy.librosykekas.librosykekasJPA.Item uno = manager.find(com.adnaloy.librosykekas.librosykekasJPA.Item.class, code);
 
 		this.setCode(uno.getCode());
 		this.setTitulo(uno.getTitulo());
 		this.setResena(uno.getResena());
-		ef.setCode(uno.getEditorialFab().getCode());
-		ef.buscaEditorialFab();
-		this.setEditorial(ef);
+		if(uno.getEditorialFab()!=null) {
+			ef.setCode(uno.getEditorialFab().getCode());
+			ef.buscaEditorialFab();
+			this.setEditorial(ef);
+		}
 		this.setComentario(uno.getComentario());
-		cat.setClave(uno.getCategoria().getClave());
-		cat.buscaCategoria();
-		this.setCategoria(cat);
+		if(uno.getCategoria()!= null) {
+			cat.setClave(uno.getCategoria().getClave());
+			cat.buscaCategoria();
+			this.setCategoria(cat);
+		}
 		
 		return this;
 	}
 	
 	
 	@TransactionAttribute(TransactionAttributeType.NEVER)
-	public List <Item> findAllItems() {
+	public List <ItemLocal> findAllItems() {
 		
 		ArrayList items = new ArrayList();
 		
@@ -220,15 +225,18 @@ public class Item implements ItemLocal{
 			it.setTitulo(uno.getTitulo());
 			it.setResena(uno.getResena());
 			
-			ef.setCode(uno.getEditorialFab().getCode());
-			ef.buscaEditorialFab();
-			it.setEditorial(ef);
+			if(uno.getEditorialFab()!=null) {
+				ef.setCode(uno.getEditorialFab().getCode());
+				ef.buscaEditorialFab();
+				it.setEditorial(ef);
+			}
 			
 			it.setComentario(uno.getComentario());
-			
-			cat.setClave(uno.getCategoria().getClave());
-			cat.buscaCategoria();
-			it.setCategoria(cat);
+			if(uno.getCategoria()!= null) {
+				cat.setClave(uno.getCategoria().getClave());
+				cat.buscaCategoria();
+				it.setCategoria(cat);
+			}
 			
 			items.add(it);
 			

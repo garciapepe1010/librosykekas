@@ -15,18 +15,18 @@ public class Item implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="ITEM_CODE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS")
+	@SequenceGenerator(name="ITEM_CODE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ITEM_CODE_GENERATOR")
 	@Column(unique=true, nullable=false, length=20)
 	private String code;
 
-	@Lob
+	@Column(length=2000)
 	private String comentario;
 
 	@Column(length=250)
 	private String resena;
 
-	@Column(nullable=false, length=50)
+	@Column(nullable=false, length=250)
 	private String titulo;
 
 	//bi-directional many-to-one association to Categoría
@@ -78,7 +78,7 @@ public class Item implements Serializable {
 		return this.categoria;
 	}
 
-	public void setCategoria(Categoria categoría) {
+	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
 

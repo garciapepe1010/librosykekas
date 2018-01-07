@@ -15,7 +15,7 @@ public class Categoria implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="CATEGORIA_CLAVE_GENERATOR", sequenceName="LIBROSYKEKAS_SQUENCE")
+	@SequenceGenerator(name="CATEGORIA_CLAVE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="CATEGORIA_CLAVE_GENERATOR")
 	private String clave;
 

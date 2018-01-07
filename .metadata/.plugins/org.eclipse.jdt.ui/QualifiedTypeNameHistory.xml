@@ -20,7 +20,6 @@
     <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal"/>
     <fullyQualifiedTypeName name="javax.persistence.Query"/>
-    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
@@ -29,5 +28,7 @@
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Categoria"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.EditorialFab"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ItemLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal"/>
     <fullyQualifiedTypeName name="javax.ejb.Local"/>
 </qualifiedTypeNameHistroy>
