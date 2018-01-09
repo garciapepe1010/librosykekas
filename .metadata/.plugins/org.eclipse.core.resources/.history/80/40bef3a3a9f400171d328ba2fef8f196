@@ -1,0 +1,26 @@
+package com.adnaloy.librosykekas.basics.interfaces;
+
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
+
+import ij.IJ;
+import ij.ImagePlus;
+import ij.process.ImageProcessor;
+
+public interface ResizeAnCropLocal {
+	
+	public String getDestination();
+	public void setDestination(String destination);
+	public String getName();
+	public void setName(String name);
+	public String getOrigen();
+	public void setOrigen(String origen);
+	
+    
+    public void proccesImage();
+    
+    public void cropAndResize(ImagePlus imp, int targetWidth, int targetHeight, String destination,String name);
+
+}

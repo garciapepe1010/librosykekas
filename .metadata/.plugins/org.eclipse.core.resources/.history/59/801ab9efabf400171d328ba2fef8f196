@@ -1,0 +1,93 @@
+package com.adnaloy.librosykekas.basics;
+
+import com.adnaloy.librosykekas.basics.interfaces.ResizeAnCropLocal;
+import ij.*;
+import ij.process.*;
+import java.io.*;
+import javax.imageio.*;
+import java.awt.image.BufferedImage;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class ResizeAnCrop
+ */
+@Stateless(mappedName = "ResizeAnCrop")
+@LocalBean
+public class ResizeAnCrop implements ResizeAnCropLocal {
+
+    /**
+     * Default constructor. 
+     */
+	private String destination;
+	private String name;
+	private String origen;
+	
+	
+	
+    public String getDestination() {
+		return destination;
+	}
+
+
+	public void setDestination(String destination) {
+		this.destination = destination;
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+	public String getOrigen() {
+		return origen;
+	}
+
+
+	public void setOrigen(String origen) {
+		this.origen = origen;
+	}
+
+
+	public ResizeAnCrop() {
+        // TODO Auto-generated constructor stub
+    }
+    
+    
+    public void proccesImage() {
+    	 String url = origen;
+    	 ImagePlus imp = IJ.openImage(url);
+    	 try {
+    		 cropAndResize(imp, 400, 100,destination,name);
+    	 }catch(Exception e) {
+    		 System.out.println("error proccessing image");
+    	 }
+    }
+    
+    public void cropAndResize(ImagePlus imp, int targetWidth, int targetHeight, String destination,String name){
+        ImageProcessor ip = imp.getProcessor();
+        ip.setInterpolationMethod(ImageProcessor.BILINEAR);
+        ip = ip.resize(targetWidth * 2, targetHeight * 2);
+
+        int cropX = ip.getWidth() / 2;
+        int cropY = ip.getHeight() / 2;
+        ip.setRoi(cropX, cropY, targetWidth, targetHeight);
+        ImageProcessor cropped = ip.crop();
+        BufferedImage croppedImage = ip.getBufferedImage();
+
+        //new ImagePlus("croppedImage", croppedImage).show();
+        try {
+
+        	ImageIO.write(croppedImage, "jpg", new File(destination.concat(name).concat(".jpg")));
+        }catch(Exception ex) {
+        	System.out.println("Error resizing image");
+        }
+    }
+
+}

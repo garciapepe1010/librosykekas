@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="categoria" key="selection"/>
+		<item value="itemName" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="itemName"/>
+			<item value="rac"/>
 			<item value="categoria"/>
 			<item value="ItemAccion"/>
 			<item value="Efs"/>
@@ -21,8 +23,6 @@
 			<item value="manager"/>
 			<item value="row"/>
 			<item value="assets"/>
-			<item value="mu"/>
-			<item value=".html"/>
 		</list>
 		<list key="replacehistory">
 			<item value="&lt;%=getServletContext().getInitParameter(&quot;HOST_STATIC_FILES&quot;)%&gt;/assets/"/>

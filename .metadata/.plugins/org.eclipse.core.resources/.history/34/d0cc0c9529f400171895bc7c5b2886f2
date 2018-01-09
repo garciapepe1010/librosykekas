@@ -1,0 +1,38 @@
+package com.adnaloy.librosykekas.basics.interfaces;
+
+import com.adnaloy.librosykekas.basics.interfaces.ResizeAnCropLocal;
+import ij.*;
+import ij.io.*;
+import ij.process.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.imageio.stream.*;
+import java.awt.image.BufferedImage;
+import javax.ejb.Local;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class ResizeAnCrop
+ */
+@Stateless(mappedName = "/ResizeAnCrop")
+@Local(ResizeAnCropLocal.class)
+@LocalBean
+public class ResizeAnCrop implements ResizeAnCropLocal {
+
+    /**
+     * Default constructor. 
+     */
+	public String getDestination();
+	public void setDestination(String destination);
+	public String getName();
+	public void setName(String name);
+	public String getOrigen();
+	public void setOrigen(String origen);
+	
+    
+    public void proccesImage();
+    
+    public void cropAndResize(ImagePlus imp, int targetWidth, int targetHeight, String destination,String name) throws Exception;
+
+}

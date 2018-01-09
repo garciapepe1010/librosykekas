@@ -30,5 +30,8 @@
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.EditorialFab"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ItemLocal"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ResizeAnCropLocal"/>
+    <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal"/>
     <fullyQualifiedTypeName name="javax.ejb.Local"/>
 </qualifiedTypeNameHistroy>

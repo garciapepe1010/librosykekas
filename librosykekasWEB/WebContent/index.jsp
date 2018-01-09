@@ -97,7 +97,7 @@
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
 						<div class="intro animate-box">
-							<h2>Soy una enamorada de los libros y las mu&ntilde;ecas.</h2>
+							<h2>${presentation}</h2>
 						</div>
 					</div>
 				</div>
@@ -108,7 +108,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6">
-						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/keka1.jpg);">
+						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/850x915_${imagen_1});">
 							<a class="image-popup text-center" href="#">
 								<div class="work-title">
 									<h3>No te quedes aqui</h3>
@@ -118,7 +118,7 @@
 						</div>
 					</div>
 					<div class="col-md-6">
-						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/libros1.jpg);">
+						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/900x1000_${imagen_2});">
 							<a class="image-popup text-center" href="#">
 								<div class="work-title">
 									<h3>No te quedes aqui</h3>
@@ -128,7 +128,7 @@
 						</div>
 					</div>
 					<div class="col-md-8">
-						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/libros2.jpg);">
+						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/975x915_${imagen_3});">
 							<a class="image-popup text-center" href="#">
 								<div class="work-title">
 									<h3>No te quedes aqui</h3>
@@ -138,7 +138,7 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/keka2.jpg);">
+						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/910x1620_${imagen_4});">
 							<a class="image-popup text-center" href="#">
 								<div class="work-title">
 									<h3>No te quedes aqui</h3>
@@ -149,7 +149,7 @@
 					</div>
 
 					<div class="col-md-12">
-						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/keka3.jpg);">
+						<div class="fh5co-grid animate-box" style="background-image: url(<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/1650x925_${imagen_5});">
 							<a class="image-popup text-center" href="#">
 								<div class="work-title">
 									<h3>Ampersand</h3>
@@ -172,7 +172,7 @@
 								<i class="icon-command"></i>
 							</div>
 							<h2>Comentarios de libros</h2>
-							<p>Comentar&eacute; los libros que he leido o vaya leyendo.</p>
+							<p>${comentario_1}</p>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
@@ -181,7 +181,7 @@
 								<i class="icon-drop2"></i>
 							</div>
 							<h2>Cometarios sobre mu&ntilde;ecas</h2>
-							<p>Tengo una colecci&oacute;n de mu&ntilde;ecas y me gusta leer sobre ellas, lo ir&eacute; comentando. </p>
+							<p>${comentario_2}</p>
 						</div>
 					</div>
 					<div class="col-md-4 animate-box">
@@ -190,7 +190,7 @@
 								<i class="icon-anchor"></i>
 							</div>
 							<h2>Mis opiniones</h2>
-							<p>Y porqu&eacute; no mis opiniones acerca de todo lo que me impacta.</p>
+							<p>${comentario_3}</p>
 						</div>
 					</div>
 				</div>

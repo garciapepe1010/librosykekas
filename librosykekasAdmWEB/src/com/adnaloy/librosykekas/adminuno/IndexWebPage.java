@@ -2,8 +2,6 @@ package com.adnaloy.librosykekas.adminuno;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Date;
-import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -21,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -34,6 +33,9 @@ public class IndexWebPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="IndexPageWEB")
 	IndexPageWEBLocal ipw;
+	@EJB(mappedName="ResizeAndCrop")
+	ResizeAndCropLocal rac;
+
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -53,9 +55,16 @@ public class IndexWebPage extends HttpServlet {
 		ipw.setClave("1");
 		ipw.buscoIndexPageWEB();
 		
+		request.setAttribute("presentation", ipw.getPresentacion());
 		request.setAttribute("comentario_1", ipw.getComentario1());
 		request.setAttribute("comentario_2", ipw.getComentario2());
 		request.setAttribute("comentario_3", ipw.getComentario3());
+		
+		request.setAttribute("imagen_1", ipw.getImg1());
+		request.setAttribute("imagen_2", ipw.getImg2());
+		request.setAttribute("imagen_3", ipw.getImg3());
+		request.setAttribute("imagen_4", ipw.getImg4());
+		request.setAttribute("imagen_5", ipw.getImg5());
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
         dispatcher.forward(request, response);
@@ -68,15 +77,11 @@ public class IndexWebPage extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 
-		
-		  
-		
-		if(request.getParameter("presentation")!=null && !"".equals(request.getParameter("presentation"))){
-			String presentatiton = request.getParameter("presentation");
+			String presentation = null;
 			
-			String comentario1 = request.getParameter("comentario1");
-			String comentario2 = request.getParameter("comentario2");
-			String comentario3 = request.getParameter("comentario3");
+			String comentario1 = null;
+			String comentario2 = null;
+			String comentario3 = null;
 			
 			String img1 = "";
 			String img2 = "";
@@ -84,11 +89,14 @@ public class IndexWebPage extends HttpServlet {
 			String img4 = "";
 			String img5 = "";
 			
+			int width = 100;
+			int height = 100;
+			
 			boolean isMultipart = ServletFileUpload.isMultipartContent(request);
 			
 			if (isMultipart) {
 				
-				String dirUpload = System.getProperty("was.server.data.dir");
+				String dirUpload = getServletContext().getInitParameter("DIR_STATIC_FILES");
 
 				
 				FileItemFactory factory = new DiskFileItemFactory();
@@ -107,49 +115,102 @@ public class IndexWebPage extends HttpServlet {
 				while (itr.hasNext()) {
 					FileItem item = (FileItem) itr.next();
 					if (item.isFormField()){
-						//String name = item.getFieldName();
-						//String value = item.getString();
-						} else {
-							String itemName = item.getName();
-							Random generator = new Random();
-							int r = Math.abs(generator.nextInt());
-							
-							
-							String reg = "[.*]";
-							String replacingtext = "";
-							System.out.println("Text before replacing is:-" + itemName);
-							Pattern pattern = Pattern.compile(reg);
-							Matcher matcher = pattern.matcher(itemName);
-							StringBuffer buffer = new StringBuffer();
-							
-							while (matcher.find()) {
-								matcher.appendReplacement(buffer, replacingtext);
-							} 
-							
-							int IndexOf = itemName.indexOf(".");
-							String domainName = itemName.substring(IndexOf);
-							System.out.println("domainName: "+domainName);
-
-							String finalimage = buffer.toString()+"_"+r+domainName;
-							System.out.println("Final Image==="+finalimage);
-
-							File savedFile = new File(dirUpload +finalimage);
-							if(item.getFieldName().equals("img1")){
-								img1 = finalimage;
-							}
-							if(item.getFieldName().equals("img2")){
-								img2 = finalimage;
-							}
-							if(item.getFieldName().equals("img3")){
-								img3 = finalimage;
-							}
-							if(item.getFieldName().equals("img4")){
-								img4 = finalimage;
-							}
-							if(item.getFieldName().equals("img5")){
-								img5 = finalimage;
-							}
+						String name = item.getFieldName();
+						if(name.equals("presentation")) {
+							presentation = item.getString();
 						}
+						if(name.equals("Comentarios_1")) {
+							comentario1 = item.getString();
+						}
+						if(name.equals("Comentarios_2")) {
+							comentario2 = item.getString();
+						}
+						if(name.equals("Comentarios_3")) {
+							comentario3 = item.getString();
+						}
+					} else {
+							String itemName = item.getName();
+							if(itemName!= null && !"".equals(itemName)) {
+								Random generator = new Random();
+								int r = Math.abs(generator.nextInt());
+								
+								String reg = "[.*]";
+								String replacingtext = "";
+								System.out.println("Text before replacing is:-" + itemName);
+								Pattern pattern = Pattern.compile(reg);
+								Matcher matcher = pattern.matcher(itemName);
+								StringBuffer buffer = new StringBuffer();
+								
+								while (matcher.find()) {
+									matcher.appendReplacement(buffer, replacingtext);
+								} 
+								
+								int IndexOf = itemName.indexOf(".");
+								String domainName = itemName.substring(IndexOf);
+								System.out.println("domainName: "+domainName);
+	
+								String finalimage = buffer.toString()+"_"+r+domainName;
+								System.out.println("Final Image==="+finalimage);
+	
+								File savedFile = new File(dirUpload +finalimage);
+								System.out.println("destination file : "+ dirUpload +finalimage);
+								if(item.getFieldName().equals("imagen_1")){
+									img1 = finalimage;
+									width = 850;
+									height = 915;
+								}
+								if(item.getFieldName().equals("imagen_2")){
+									img2 = finalimage;
+									width = 900;
+									height = 1000;
+								}
+								if(item.getFieldName().equals("imagen_3")){
+									img3 = finalimage;
+									width = 975;
+									height = 915;
+								}
+								if(item.getFieldName().equals("imagen_4")){
+									img4 = finalimage;
+									width = 910;
+									height = 1620;
+								}
+								if(item.getFieldName().equals("imagen_5")){
+									img5 = finalimage;
+									width = 1650;
+									height = 925;
+								}
+								
+								if(".gif".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/gif");	
+								}else if(".jpg".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/jpeg");
+								}else if(".jpeg".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/jpeg");
+								}else if(".tiff".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/tiff");
+								}else if(".svg".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/svg+xml");
+								}else if(".png".equalsIgnoreCase(domainName)) {
+									response.setContentType("image/png");
+								}
+								
+								
+								try {
+									item.write(savedFile);
+								}catch(Exception ex) {
+									
+								}
+								
+								rac.setOrigen(dirUpload);
+								rac.setName(finalimage);
+								rac.setWidth(width);
+								rac.setHeight(height);
+								rac.setDestination(dirUpload);
+								rac.doIt();
+								
+							}
+							
+					}
 				}
 			}
 			
@@ -161,24 +222,40 @@ public class IndexWebPage extends HttpServlet {
 			ipw.setComentario2(comentario2);
 			ipw.setComentario3(comentario3);
 			
-			ipw.setPresentacion(presentatiton);
+			ipw.setPresentacion(presentation);
 			
-			ipw.setImg1(img1);
-			ipw.setImg2(img2);
-			ipw.setImg3(img3);
-			ipw.setImg4(img4);
-			ipw.setImg5(img5);
+			if(img1!= null && !img1.equals(""))
+				ipw.setImg1(img1);
+			if(img2!= null && !img2.equals(""))
+				ipw.setImg2(img2);
+			if(img3!= null && !img3.equals(""))
+				ipw.setImg3(img3);
+			if(img4!= null && !img4.equals(""))
+				ipw.setImg4(img4);
+			if(img5!= null && !img5.equals(""))
+				ipw.setImg5(img5);
 			
 			ipw.actualizo();
 			
 			
+			ipw.setClave("1");
+			ipw.buscoIndexPageWEB();
+			
+			request.setAttribute("presentation", ipw.getPresentacion());
+			request.setAttribute("comentario_1", ipw.getComentario1());
+			request.setAttribute("comentario_2", ipw.getComentario2());
+			request.setAttribute("comentario_3", ipw.getComentario3());
+			
+			request.setAttribute("imagen_1", ipw.getImg1());
+			request.setAttribute("imagen_2", ipw.getImg2());
+			request.setAttribute("imagen_3", ipw.getImg3());
+			request.setAttribute("imagen_4", ipw.getImg4());
+			request.setAttribute("imagen_5", ipw.getImg5());
+			
 			request.setAttribute("resultadoOperacion", "Operaci&oacute;n realizada con exito");
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
-	        dispatcher.forward(request, response);
-		}
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
-        dispatcher.forward(request, response);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
+			dispatcher.forward(request, response);
 	}
 
 }

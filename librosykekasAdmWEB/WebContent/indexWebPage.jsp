@@ -86,15 +86,15 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>Basic Form Examples</h3>
-                                    <form role="form"  method="post" action="IndexWebPage" >
+                                    <form role="form"  method="post" action="IndexWebPage" enctype="multipart/form-data" >
                                     	<div class="form-group" id="presentation">
                                             <label>Presentacion</label>
-                                            <textarea class="form-control" name="presentation" rows="3"></textarea>
+                                            <textarea class="form-control" name="presentation" rows="3"> <% Object ob1 = request.getAttribute("presentation"); out.println(ob1);%></textarea>
                                         </div>
                                         
                                         <div class="form-group">
                                             <label>Comentarios 1</label>
-                                            <input class="form-control" name="Comentarios_1" value="<% Object ob1 = request.getAttribute("comentario_1"); out.println(ob1);%>"/>
+                                            <input class="form-control" name="Comentarios_1" value="<% Object ob11 = request.getAttribute("comentario_1"); out.println(ob11);%>"/>
                                             <p class="help-block">Lo que hay en el comentario de la izquierda</p>
                                         </div>
                                         
@@ -113,22 +113,27 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                                         <div class="form-group">
                                             <label>La primera de las imagenes</label>
                                             <input type="file" name="imagen_1"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${imagen_1}</p>
                                         </div>
                                         <div class="form-group">
                                             <label>La segunda de las imagenes</label>
                                             <input type="file" name="imagen_2"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${imagen_2}</p>
                                         </div>
                                         <div class="form-group">
                                             <label>La tercera de las imagenes</label>
                                             <input type="file" name="imagen_3"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${imagen_3}</p>
                                         </div>
                                         <div class="form-group">
                                             <label>La cuarta de las imagenes</label>
                                             <input type="file" name="imagen_4"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${imagen_4}</p>
                                         </div>
                                         <div class="form-group">
                                             <label>La quinta de las imagenes</label>
                                             <input type="file" name="imagen_5"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${imagen_5}</p>
                                         </div>
                                         <button type="submit" class="btn btn-default">Guardar</button>
                                         <button type="reset" class="btn btn-primary">Limpiar</button>

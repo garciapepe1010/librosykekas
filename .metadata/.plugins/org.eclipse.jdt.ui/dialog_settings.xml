@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasAdmWEB/WebContent/WEB-INF/lib" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="/mnt/b8a43320-20ea-42d1-85e6-ee5264fd59a6/proyectos/librosykekaswrks/librosykekasEJBClient/ejbModule/META-INF/lib" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="org.eclipse.ltk.ui.refactoring.settings">
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
