@@ -33,5 +33,8 @@
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ResizeAnCropLocal"/>
     <fullyQualifiedTypeName name="java.awt.Graphics2D"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.AcercadePageWeb"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.AcercaDePageWeb"/>
     <fullyQualifiedTypeName name="javax.ejb.Local"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal"/>
 </qualifiedTypeNameHistroy>

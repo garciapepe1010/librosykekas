@@ -1,0 +1,133 @@
+package com.adnaloy.librosykekas.adminuno;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Random;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal;
+import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal;
+
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.*;
+
+/**
+ * Servlet implementation class IndexWebPage
+ */
+@WebServlet(description = "setup index page from librosykekasWEB", urlPatterns = { "/IndexWebPage" })
+public class AcercaDeWebPage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	@EJB(mappedName="AcercaDePageWeb")
+	AcercaDePageWebLocal ipw;
+
+
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public AcercaDeWebPage() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		ipw.setClave("1");
+		ipw.buscoAcercaDePageWEB();
+		
+		request.setAttribute("acercade", ipw.getAcercade());
+		request.setAttribute("aunmas", ipw.getAunmas());
+		request.setAttribute("clave", ipw.getClave());
+		request.setAttribute("historia", ipw.getHistoria());
+		request.setAttribute("inquietudes", ipw.getInquietudes());
+		request.setAttribute("kekas", ipw.getKekas());
+		request.setAttribute("libros", ipw.getLibros());
+		request.setAttribute("viajes", ipw.getViajes());
+
+
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AcercaDeWebPage.jsp");
+        dispatcher.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//doGet(request, response);
+
+			String presentation = null;
+			
+			String comentario1 = null;
+			String comentario2 = null;
+			String comentario3 = null;
+			
+			String img1 = "";
+			String img2 = "";
+			String img3 = "";
+			String img4 = "";
+			String img5 = "";
+			
+			
+			ipw.setClave("1");
+			
+			ipw.buscoAcercaDePageWEB();
+			
+			ipw.setComentario1(comentario1);
+			ipw.setComentario2(comentario2);
+			ipw.setComentario3(comentario3);
+			
+			ipw.setPresentacion(presentation);
+			
+			if(img1!= null && !img1.equals(""))
+				ipw.setImg1(img1);
+			if(img2!= null && !img2.equals(""))
+				ipw.setImg2(img2);
+			if(img3!= null && !img3.equals(""))
+				ipw.setImg3(img3);
+			if(img4!= null && !img4.equals(""))
+				ipw.setImg4(img4);
+			if(img5!= null && !img5.equals(""))
+				ipw.setImg5(img5);
+			
+			ipw.actualizo();
+			
+			
+			ipw.setClave("1");
+			ipw.buscoAcercaDePageWEB();
+			
+			request.setAttribute("acercade", ipw.getAcercade());
+			request.setAttribute("aunmas", ipw.getAunmas());
+			request.setAttribute("clave", ipw.getClave());
+			request.setAttribute("historia", ipw.getHistoria());
+			request.setAttribute("inquietudes", ipw.getInquietudes());
+			request.setAttribute("kekas", ipw.getKekas());
+			request.setAttribute("libros", ipw.getLibros());
+			request.setAttribute("viajes", ipw.getViajes());
+			
+			request.setAttribute("resultadoOperacion", "Operaci&oacute;n realizada con exito");
+		
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AcercaDeWebPage.jsp");
+			dispatcher.forward(request, response);
+	}
+
+}
