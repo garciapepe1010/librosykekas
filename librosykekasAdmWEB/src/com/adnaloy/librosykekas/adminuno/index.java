@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.usuarioLocal;
 
 
@@ -35,6 +36,10 @@ public class index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="usuario")
 	usuarioLocal usr;
+	
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
+	
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -49,10 +54,12 @@ public class index extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		prm.cargodatos();
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	
 		
 		request.setAttribute("timestamp", new Date());
+		request.setAttribute("prm", prm);
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response);  
 	}

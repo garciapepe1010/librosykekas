@@ -22,7 +22,6 @@
     <fullyQualifiedTypeName name="javax.persistence.Query"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
     <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.SendMailLocal"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Categoria"/>
@@ -35,6 +34,10 @@
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.AcercadePageWeb"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.AcercaDePageWeb"/>
-    <fullyQualifiedTypeName name="javax.ejb.Local"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal"/>
+    <fullyQualifiedTypeName name="javax.naming.InitialContext"/>
+    <fullyQualifiedTypeName name="javax.naming.Context"/>
+    <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
+    <fullyQualifiedTypeName name="javax.ejb.Local"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ParametersLocal"/>
 </qualifiedTypeNameHistroy>

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 
 /**
  * Servlet implementation class inside
@@ -21,6 +22,8 @@ public class inside extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="AcercaDePageWeb")
 	AcercaDePageWebLocal ipw;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
     /**
      * @see HttpServlet#HttpServlet()
      */

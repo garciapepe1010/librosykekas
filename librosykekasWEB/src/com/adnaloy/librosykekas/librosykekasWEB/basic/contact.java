@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.SendMailLocal;
 
 /**
@@ -22,6 +23,8 @@ public class contact extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="SendMail")
 	SendMailLocal sml;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
        
 	private final static String MENSAJE_DE = "Mensaje de : ";
     /**
@@ -51,11 +54,17 @@ public class contact extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
+		prm.cargodatos();
+		
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
 		String email = request.getParameter("email");
 		String phone = request.getParameter("phone");
 		String message = request.getParameter("message");
+		
+		sml.setFrom(prm.getE_MAIL_FROM());
+		sml.setTo(prm.getE_MAIL_TO());
+		sml.setPass(prm.getE_MAIL_PASS());
 		
 		sml.setSubject(MENSAJE_DE + firstname + " " + lastname);
 		sml.setText(email + " " + phone + " " + message);

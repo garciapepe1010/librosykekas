@@ -13,7 +13,7 @@
 	</welcome-file-list>
 	    <!-- The following servlet element defines a servlet called servletA.
      The Java class of this servlet is servlets.servletA -->
-
+<!--
 	  <context-param>
 	    <param-name>HOST_STATIC_FILES</param-name>
 	    <param-value>http://localhost</param-value>
@@ -22,7 +22,7 @@
 	    <param-name>DIR_STATIC_FILES</param-name>
 	    <param-value>/var/www/html/images/</param-value>
 	  </context-param>
-
+-->
 
       <servlet>
         <servlet-name>indexSERV</servlet-name>

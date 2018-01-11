@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
 
 /**
@@ -21,6 +22,8 @@ public class index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="IndexPageWEB")
 	IndexPageWEBLocal ipw;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -38,6 +41,7 @@ public class index extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		request.setAttribute("timestamp", new Date());
+		prm.cargodatos();
 		ipw.setClave("1");
 		ipw.buscoIndexPageWEB();
 		
@@ -51,6 +55,8 @@ public class index extends HttpServlet {
 		request.setAttribute("imagen_3", ipw.getImg3());
 		request.setAttribute("imagen_4", ipw.getImg4());
 		request.setAttribute("imagen_5", ipw.getImg5());
+		
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response); 

@@ -1,13 +1,17 @@
 package com.adnaloy.librosykekas.basics;
 
-import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
+
+
 import com.adnaloy.librosykekas.basics.interfaces.SendMailLocal;
+
+import javax.ejb.EJB;
 import javax.ejb.Local;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
+
 
 
 
@@ -19,11 +23,14 @@ import javax.mail.internet.*;
 @Local(SendMailLocal.class)
 @LocalBean
 public class SendMail implements SendMailLocal {
-	
+
+
     // Recipient's email ID needs to be mentioned.
-    private static final String to = "makegarcia57@gmail.com";
+    private  String to = "";
     // Sender's email ID needs to be mentioned
-    private static final String from = "librosykekas@gmail.com";
+    private  String from = "";
+    
+    private  String pass = "";
     // Assuming you are sending email from localhost
     private static final String host = "smtp.gmail.com";
     
@@ -54,11 +61,40 @@ public class SendMail implements SendMailLocal {
 	}
 
 
+	public String getFrom() {
+		return from;
+	}
+
+
+	public void setFrom(String from) {
+		this.from = from;
+	}
+
+
+	public String getPass() {
+		return pass;
+	}
+
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+
+
+	public String getTo() {
+		return to;
+	}
+
+
+	public void setTo(String to) {
+		this.to = to;
+	}
+
+
 	/**
      * Default constructor. 
      */
     public SendMail() {
-        // TODO Auto-generated constructor stub
     }
     
     public void doIt() {
@@ -79,7 +115,7 @@ public class SendMail implements SendMailLocal {
 
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("librosykekas@gmail.com", "junioari17");
+                return new PasswordAuthentication(from, pass);
             }
 
         });
