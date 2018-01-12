@@ -44,20 +44,20 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Roboto:300,400' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/css/animate.css">
+	<link rel="stylesheet" href="${prm.HOST_STATIC_FILES}/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/css/icomoon.css">
+	<link rel="stylesheet" href="${prm.HOST_STATIC_FILES}/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/css/bootstrap.css">
+	<link rel="stylesheet" href="${prm.HOST_STATIC_FILES}/css/bootstrap.css">
 
-	<link rel="stylesheet" href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/css2/style.css">
+	<link rel="stylesheet" href="${prm.HOST_STATIC_FILES}/css2/style.css">
 
 
 	<!-- Modernizr JS -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/modernizr-2.6.2.min.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/respond.min.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/respond.min.js"></script>
 	<![endif]-->
 
 	</head>
@@ -69,7 +69,7 @@
 					<div class="row">
 						<div class="col-md-3">
 							<div class="fh5co-navbar-brand">
-								<a class="fh5co-logo" href="index"><img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/brand-nav.png" alt="Closest Logo"></a>
+								<a class="fh5co-logo" href="index"><img src="${prm.HOST_STATIC_FILES}/images/brand-nav.png" alt="Closest Logo"></a>
 							</div>
 						</div>
 						<div class="col-md-6">
@@ -132,7 +132,7 @@
 					<div class="post-entry">
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/work-2.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-2.jpg" alt="Product"></a>
 								<div>
 									<h3><a href="#">Viajes</a></h3>
 									<p>${viajes}</p>
@@ -142,7 +142,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/work-1.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-1.jpg" alt="Product"></a>
 								<div>
 									<h3><a href="#">Libros</a></h3>
 									<p>${libros}</p>
@@ -152,7 +152,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/work-2.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-2.jpg" alt="Product"></a>
 								<div>
 									<h3><a href="#">Kekas</a></h3>
 									<p>${kekas}</p>
@@ -162,7 +162,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/images/work-1.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-1.jpg" alt="Product"></a>
 								<div>
 									<h3><a href="#">Inquietudes</a></h3>
 									<p>${inquietudes}</p>
@@ -231,16 +231,16 @@
 	<!-- END: box-wrap -->
 	
 	<!-- jQuery -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/jquery.min.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/jquery.easing.1.3.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/bootstrap.min.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/jquery.waypoints.min.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/jquery.waypoints.min.js"></script>
 
 	<!-- Main JS (Do not remove) -->
-	<script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/js/main.js"></script>
+	<script src="${prm.HOST_STATIC_FILES}/js/main.js"></script>
 
 	</body>
 </html>

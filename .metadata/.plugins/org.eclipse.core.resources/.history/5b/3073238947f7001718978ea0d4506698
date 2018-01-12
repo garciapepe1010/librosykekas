@@ -41,9 +41,7 @@ public class contact extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		prm.cargodatos();
 		
-		request.setAttribute("prm", prm);
 		request.setAttribute("timestamp", new Date());
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
         dispatcher.forward(request, response); 
@@ -56,8 +54,8 @@ public class contact extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		
-		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		String firstname = request.getParameter("firstname");
 		String lastname = request.getParameter("lastname");
@@ -75,7 +73,7 @@ public class contact extends HttpServlet {
 		sml.doIt();
 		
 		
-		request.setAttribute("prm", prm);
+		
 		request.setAttribute("resultado", "Mensaje enviado");
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
         dispatcher.forward(request, response); 

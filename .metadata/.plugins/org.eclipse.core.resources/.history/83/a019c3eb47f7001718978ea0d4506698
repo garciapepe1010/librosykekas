@@ -75,7 +75,7 @@ public class contact extends HttpServlet {
 		sml.doIt();
 		
 		
-		request.setAttribute("prm", prm);
+		
 		request.setAttribute("resultado", "Mensaje enviado");
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
         dispatcher.forward(request, response); 

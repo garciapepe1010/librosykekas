@@ -11,26 +11,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
+import com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
-import com.adnaloy.librosykekas.basics.interfaces.SendMailLocal;
 
 /**
- * Servlet implementation class contact
+ * Servlet implementation class inside
  */
-@WebServlet(description = "contact from the website", urlPatterns = { "/contact" })
-public class contact extends HttpServlet {
+@WebServlet(description = "inside Make", urlPatterns = { "/inside" })
+public class inside extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	@EJB(mappedName="SendMail")
-	SendMailLocal sml;
+	@EJB(mappedName="AcercaDePageWeb")
+	AcercaDePageWebLocal ipw;
 	@EJB(mappedName="Parameters")
 	ParametersLocal prm;
-       
-	private final static String MENSAJE_DE = "Mensaje de : ";
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public contact() {
+    public inside() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,11 +38,21 @@ public class contact extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		prm.cargodatos();
 		
-		request.setAttribute("prm", prm);
 		request.setAttribute("timestamp", new Date());
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
+		ipw.setClave("1");
+		ipw.buscoAcercaDePageWEB();
+		
+		request.setAttribute("acercade", ipw.getAcercade());
+		request.setAttribute("aunmas", ipw.getAunmas());
+		request.setAttribute("clave", ipw.getClave());
+		request.setAttribute("historia", ipw.getHistoria());
+		request.setAttribute("inquietudes", ipw.getInquietudes());
+		request.setAttribute("kekas", ipw.getKekas());
+		request.setAttribute("libros", ipw.getLibros());
+		request.setAttribute("viajes", ipw.getViajes());
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/inside.jsp");
         dispatcher.forward(request, response); 
 	}
 
@@ -54,32 +61,7 @@ public class contact extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
-		
-		
-		
-		
-		String firstname = request.getParameter("firstname");
-		String lastname = request.getParameter("lastname");
-		String email = request.getParameter("email");
-		String phone = request.getParameter("phone");
-		String message = request.getParameter("message");
-		
-		sml.setFrom(prm.getE_MAIL_FROM());
-		sml.setTo(prm.getE_MAIL_TO());
-		sml.setPass(prm.getE_MAIL_PASS());
-		
-		sml.setSubject(MENSAJE_DE + firstname + " " + lastname);
-		sml.setText(email + " " + phone + " " + message);
-		
-		sml.doIt();
-		
-		
-		request.setAttribute("prm", prm);
-		request.setAttribute("resultado", "Mensaje enviado");
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
-        dispatcher.forward(request, response); 
-
+		doGet(request, response);
 	}
 
 }

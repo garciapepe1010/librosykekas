@@ -37,6 +37,9 @@ public class services extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
+		
 		request.setAttribute("timestamp", new Date());
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/services.jsp");
         dispatcher.forward(request, response); 

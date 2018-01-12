@@ -52,6 +52,9 @@ public class inside extends HttpServlet {
 		request.setAttribute("libros", ipw.getLibros());
 		request.setAttribute("viajes", ipw.getViajes());
 		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/inside.jsp");
         dispatcher.forward(request, response); 
 	}
