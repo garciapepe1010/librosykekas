@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal;
 import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -32,7 +33,8 @@ public class AcercaDeWebPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="AcercaDePageWeb")
 	AcercaDePageWebLocal ipw;
-
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -60,7 +62,8 @@ public class AcercaDeWebPage extends HttpServlet {
 		request.setAttribute("libros", ipw.getLibros());
 		request.setAttribute("viajes", ipw.getViajes());
 
-
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AcercaDeWebPage.jsp");
         dispatcher.forward(request, response);
@@ -112,6 +115,8 @@ public class AcercaDeWebPage extends HttpServlet {
 			request.setAttribute("viajes", ipw.getViajes());
 			
 			request.setAttribute("resultadoOperacion", "Operaci&oacute;n realizada con exito");
+			prm.cargodatos();
+			request.setAttribute("prm", prm);
 		
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AcercaDeWebPage.jsp");
 			dispatcher.forward(request, response);

@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ItemLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 
 /**
  * Servlet implementation class ItemWebPage
@@ -27,6 +28,8 @@ public class ItemWebPage extends HttpServlet {
 	CategoriaLocal cat;
 	@EJB(mappedName="EditorialFab")
 	EditorialFabLocal ef;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -46,6 +49,9 @@ public class ItemWebPage extends HttpServlet {
 		List efs = itm.findAllItems();
 		
 		request.setAttribute("ListaItem", efs);
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ItemListWebPage.jsp");
         dispatcher.forward(request, response);
@@ -218,6 +224,9 @@ String destino = "/ItemEditWebPage.jsp";
 			
 			destino = "/ItemListWebPage.jsp";
 		}
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destino);
         dispatcher.forward(request, response);

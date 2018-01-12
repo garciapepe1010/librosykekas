@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 
 /**
  * Servlet implementation class CategoriaWebPage
@@ -21,6 +22,8 @@ public class CategoriaWebPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="Categoria")
 	CategoriaLocal ef;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,6 +44,8 @@ public class CategoriaWebPage extends HttpServlet {
 		
 		request.setAttribute("ListaCategoria", efs);
 		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/CategoriaListWebPage.jsp");
         dispatcher.forward(request, response);
@@ -152,6 +157,9 @@ public class CategoriaWebPage extends HttpServlet {
 			
 			destino = "/CategoriaListWebPage.jsp";
 		}
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destino);
         dispatcher.forward(request, response);

@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free Bootstrap Admin Template : Binary Admin</title>
 	<!-- BOOTSTRAP STYLES-->
-    <link href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="${prm.HOST_STATIC_FILES}/assets/css/bootstrap.css" rel="stylesheet" />
      <!-- FONTAWESOME STYLES-->
-    <link href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="${prm.HOST_STATIC_FILES}/assets/css/font-awesome.css" rel="stylesheet" />
      <!-- MORRIS CHART STYLES-->
    
         <!-- CUSTOM STYLES-->
-    <link href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/css/custom.css" rel="stylesheet" />
+    <link href="${prm.HOST_STATIC_FILES}/assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
-    <link href="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="${prm.HOST_STATIC_FILES}/assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -33,14 +33,14 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-danger square-btn-adjust">Logout</a> </div>
+font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn btn-danger square-btn-adjust">Logout</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 				<li class="text-center">
-                    <img src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/img/find_user.png" class="user-image img-responsive"/>
+                    <img src="${prm.HOST_STATIC_FILES}/assets/img/find_user.png" class="user-image img-responsive"/>
 					</li>
 			
                     <li>
@@ -149,21 +149,21 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/jquery-1.10.2.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/bootstrap.min.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/jquery.metisMenu.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/jquery.metisMenu.js"></script>
      <!-- DATA TABLE SCRIPTS -->
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/dataTables/jquery.dataTables.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/dataTables/dataTables.bootstrap.js"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
     </script>
          <!-- CUSTOM SCRIPTS -->
-    <script src="<%=getServletContext().getInitParameter("HOST_STATIC_FILES")%>/assets/js/custom.js"></script>
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/custom.js"></script>
     
    
 </body>

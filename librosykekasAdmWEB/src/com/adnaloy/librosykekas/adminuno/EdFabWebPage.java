@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 
 /**
  * Servlet implementation class EdFabWebPage
@@ -21,6 +22,8 @@ public class EdFabWebPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="EditorialFab")
 	EditorialFabLocal ef;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -40,6 +43,9 @@ public class EdFabWebPage extends HttpServlet {
 		List efs = ef.findAllEditorialFab();
 		
 		request.setAttribute("ListaEditFab", efs);
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EdFabListWebPage.jsp");
         dispatcher.forward(request, response);
@@ -158,6 +164,9 @@ public class EdFabWebPage extends HttpServlet {
 			
 			destino = "/EdFabListWebPage.jsp";
 		}
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destino);
         dispatcher.forward(request, response);

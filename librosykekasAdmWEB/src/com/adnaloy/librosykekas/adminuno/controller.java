@@ -53,7 +53,7 @@ public class controller extends HttpServlet {
 		
 		
 		request.setAttribute("timestamp", new Date());
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index");
         dispatcher.forward(request, response);  
 	}
 

@@ -2,12 +2,17 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="${prm.HOST_STATIC_FILES}" key="selection"/>
+		<item value="&quot;" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&quot;"/>
+			<item value="&lt;%=${prm.HOST_STATIC_FILES}%&gt;"/>
+			<item value="}"/>
+			<item value="%&gt;"/>
+			<item value="getServletContext().getInitParameter(&quot;HOST_STATIC_FILES&quot;)"/>
 			<item value="&lt;%=getServletContext().getInitParameter(&quot;HOST_STATIC_FILES&quot;)%&gt;"/>
 			<item value="itemName"/>
 			<item value="rac"/>
@@ -18,14 +23,10 @@
 			<item value="EditFabAccion"/>
 			<item value="&lt;c:choose&gt;"/>
 			<item value="&lt;c:choose&gt; "/>
-			<item value="href"/>
-			<item value="src"/>
-			<item value="assets/"/>
-			<item value="manager"/>
-			<item value="row"/>
 		</list>
 		<list key="replacehistory">
 			<item value="${prm.HOST_STATIC_FILES}"/>
+			<item value=""/>
 			<item value="&lt;%=getServletContext().getInitParameter(&quot;HOST_STATIC_FILES&quot;)%&gt;/assets/"/>
 			<item value="&lt;%=getServletContext().getInitParameter(&quot;HOST_STATIC_FILES&quot;)%&gt;/assets"/>
 		</list>

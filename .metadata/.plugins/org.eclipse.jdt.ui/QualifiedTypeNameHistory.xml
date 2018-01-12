@@ -40,4 +40,5 @@
     <fullyQualifiedTypeName name="javax.ejb.Stateful"/>
     <fullyQualifiedTypeName name="javax.ejb.Local"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ParametersLocal"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
 </qualifiedTypeNameHistroy>

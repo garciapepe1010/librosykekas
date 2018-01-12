@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ResizeAndCropLocal;
 
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -35,6 +36,8 @@ public class IndexWebPage extends HttpServlet {
 	IndexPageWEBLocal ipw;
 	@EJB(mappedName="ResizeAndCrop")
 	ResizeAndCropLocal rac;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
 
        
     /**
@@ -65,6 +68,11 @@ public class IndexWebPage extends HttpServlet {
 		request.setAttribute("imagen_3", ipw.getImg3());
 		request.setAttribute("imagen_4", ipw.getImg4());
 		request.setAttribute("imagen_5", ipw.getImg5());
+		
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
+		
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
         dispatcher.forward(request, response);
@@ -253,6 +261,9 @@ public class IndexWebPage extends HttpServlet {
 			request.setAttribute("imagen_5", ipw.getImg5());
 			
 			request.setAttribute("resultadoOperacion", "Operaci&oacute;n realizada con exito");
+			
+			prm.cargodatos();
+			request.setAttribute("prm", prm);
 		
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/indexWebPage.jsp");
 			dispatcher.forward(request, response);
