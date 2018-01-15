@@ -12,6 +12,7 @@
     <link href="${prm.HOST_STATIC_FILES}/assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -115,28 +116,83 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                                         
                                         <div class="form-group">
                                             <label>La primera de las imagenes</label>
-                                            <input type="file" name="imagen_1"/>
+                                            <input type="file" id="imagen_1" name="imagen_1" onchange="loadFile(event)"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_1}</p>
+                                            <img id="output" height="42" width="42" />
+											<script>
+											  var loadFile = function(event) {
+											    var reader = new FileReader();
+											    reader.onload = function(){
+											      var output = document.getElementById('output');
+											      output.src = reader.result;
+											    };
+											    reader.readAsDataURL(event.target.files[0]);
+											  };
+											</script>
                                         </div>
                                         <div class="form-group">
                                             <label>La segunda de las imagenes</label>
-                                            <input type="file" name="imagen_2"/>
+                                            <input type="file" name="imagen_2" onchange="loadFile2(event)"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_2}</p>
+                                             <img id="output2" height="42" width="42" />
+											<script>
+											  var loadFile2 = function(event) {
+											    var reader = new FileReader();
+											    reader.onload = function(){
+											      var output = document.getElementById('output2');
+											      output.src = reader.result;
+											    };
+											    reader.readAsDataURL(event.target.files[0]);
+											  };
+											</script>
                                         </div>
                                         <div class="form-group">
                                             <label>La tercera de las imagenes</label>
-                                            <input type="file" name="imagen_3"/>
+                                            <input type="file" name="imagen_3" onchange="loadFile3(event)"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_3}</p>
+                                             <img id="output3" height="42" width="42" />
+											<script>
+											  var loadFile3 = function(event) {
+											    var reader = new FileReader();
+											    reader.onload = function(){
+											      var output = document.getElementById('output3');
+											      output.src = reader.result;
+											    };
+											    reader.readAsDataURL(event.target.files[0]);
+											  };
+											</script>
                                         </div>
                                         <div class="form-group">
                                             <label>La cuarta de las imagenes</label>
-                                            <input type="file" name="imagen_4"/>
+                                            <input type="file" name="imagen_4" onchange="loadFile4(event)"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_4}</p>
+                                             <img id="output4" height="42" width="42" />
+											<script>
+											  var loadFile4 = function(event) {
+											    var reader = new FileReader();
+											    reader.onload = function(){
+											      var output = document.getElementById('output4');
+											      output.src = reader.result;
+											    };
+											    reader.readAsDataURL(event.target.files[0]);
+											  };
+											</script>
                                         </div>
                                         <div class="form-group">
                                             <label>La quinta de las imagenes</label>
-                                            <input type="file" name="imagen_5"/>
+                                            <input type="file" name="imagen_5" onchange="loadFile5(event)"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_5}</p>
+                                             <img id="output5" height="42" width="42" />
+											<script>
+											  var loadFile5 = function(event) {
+											    var reader = new FileReader();
+											    reader.onload = function(){
+											      var output = document.getElementById('output5');
+											      output.src = reader.result;
+											    };
+											    reader.readAsDataURL(event.target.files[0]);
+											  };
+											</script>
                                         </div>
                                         <button type="submit" class="btn btn-default">Guardar</button>
                                         <button type="reset" class="btn btn-primary">Limpiar</button>

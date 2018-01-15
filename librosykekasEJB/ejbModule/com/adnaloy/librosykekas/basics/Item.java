@@ -1,5 +1,6 @@
 package com.adnaloy.librosykekas.basics;
 
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,6 +14,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
+
+
 
 import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
@@ -42,6 +45,11 @@ public class Item implements ItemLocal{
 	private EditorialFabLocal editorial;
 	private String comentario;
 	private CategoriaLocal categoria;
+	
+	private String filtroTitulo;
+	private String filtroResena;
+	private String filtroEditorial;
+	private String filtroCategoria;
 	
 	
 	/**
@@ -103,6 +111,54 @@ public class Item implements ItemLocal{
 
 	public void setCategoria(CategoriaLocal categoria) {
 		this.categoria = categoria;
+	}
+	
+
+
+	public String getFiltroTitulo() {
+		return filtroTitulo;
+	}
+
+
+
+	public void setFiltroTitulo(String filtroTitulo) {
+		this.filtroTitulo = filtroTitulo;
+	}
+
+
+
+	public String getFiltroResena() {
+		return filtroResena;
+	}
+
+
+
+	public void setFiltroResena(String filtroResena) {
+		this.filtroResena = filtroResena;
+	}
+
+
+
+	public String getFiltroEditorial() {
+		return filtroEditorial;
+	}
+
+
+
+	public void setFiltroEditorial(String filtroEditorial) {
+		this.filtroEditorial = filtroEditorial;
+	}
+
+
+
+	public String getFiltroCategoria() {
+		return filtroCategoria;
+	}
+
+
+
+	public void setFiltroCategoria(String filtroCategoria) {
+		this.filtroCategoria = filtroCategoria;
 	}
 
 
@@ -239,6 +295,155 @@ public class Item implements ItemLocal{
 			}
 			
 			items.add(it);
+			
+		}
+		 
+		return items;
+	}
+	@TransactionAttribute(TransactionAttributeType.NEVER)
+	public List <ItemLocal> findThreeItems() {
+		
+		ArrayList items = new ArrayList();
+		int itemsCount = 0;
+		
+		//Atento pepe es el nombre de la clase no de la tabla
+		
+		Query query = manager.createQuery("Select a from Item a");
+			//query.setParameter("clave", clave);
+		Collection<com.adnaloy.librosykekas.librosykekasJPA.Item>  unos = query.getResultList();
+		/*	
+		Collection<com.adnaloy.librosykekas.librosykekasJPA.EditorialFab > unos = manager.createNamedQuery("findAllCustomersWithName")
+	            									.getResultList();
+	    */
+		
+		for(com.adnaloy.librosykekas.librosykekasJPA.Item uno:unos) {
+			
+			Item it = new Item();
+			
+			it.setCode(uno.getCode());
+			it.setTitulo(uno.getTitulo());
+			it.setResena(uno.getResena());
+			
+			if(uno.getEditorialFab()!=null) {
+				ef.setCode(uno.getEditorialFab().getCode());
+				ef.buscaEditorialFab();
+				it.setEditorial(ef);
+			}
+			
+			it.setComentario(uno.getComentario());
+			if(uno.getCategoria()!= null) {
+				cat.setClave(uno.getCategoria().getClave());
+				cat.buscaCategoria();
+				it.setCategoria(cat);
+			}
+			
+			if(itemsCount < 3)
+				items.add(it);
+			
+			itemsCount ++;
+			
+		}
+		 
+		return items;
+	}
+	
+	@TransactionAttribute(TransactionAttributeType.NEVER)
+	public List <ItemLocal> findItems() {
+		
+		ArrayList items = new ArrayList();
+
+		//Atento pepe es el nombre de la clase no de la tabla
+		
+		boolean existParam = false;
+		
+		
+		String queryString = "Select a from Item a ";
+		
+		
+		if(filtroTitulo != null && !filtroTitulo.trim().equals("")) {
+			queryString = queryString.concat(" where a.titulo LIKE '%");
+			queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroTitulo, true));
+			queryString = queryString.concat("%'");
+			existParam = true;
+		}
+		if(filtroResena != null && !filtroResena.trim().equals("")) {
+			if(existParam) {
+			queryString = queryString.concat(" and a.resena LIKE '%");
+			queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroResena, true));
+			queryString = queryString.concat("%'");
+			
+			}else {
+				queryString = queryString.concat(" where a.resena LIKE '%");
+				queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroResena, true));
+				queryString = queryString.concat("%'");
+			}
+			existParam = true;
+		}
+		if(filtroEditorial != null && !filtroEditorial.trim().equals("") && !filtroEditorial.trim().equals("Ninguna")) {
+			if(existParam) {
+				
+			queryString = queryString.concat(" and a.editorialFab.code = '");
+			queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroEditorial, true));
+			queryString = queryString.concat("'");
+			
+			}else {
+				queryString = queryString.concat(" where a.editorialFab.code = '");
+				queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroEditorial, true));
+				queryString = queryString.concat("'");
+			}
+			existParam = true;
+		}
+		if(filtroCategoria != null && !filtroCategoria.trim().equals("") && !filtroCategoria.trim().equals("Ninguna")) {
+			if(existParam) {
+			queryString = queryString.concat(" and a.categoria.clave = '");
+			queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroCategoria, true));
+			queryString = queryString.concat("'");
+			
+			}else {
+				queryString = queryString.concat(" where a.categoria.clave LIKE '%");
+				queryString = queryString.concat(SQLInjectionEscaper.escapeString(filtroCategoria, true));
+				queryString = queryString.concat("'");
+			}
+			existParam = true;
+		}
+		
+		Query query = null;
+		query = manager
+		         .createQuery(queryString);
+		
+
+
+		
+		Collection<com.adnaloy.librosykekas.librosykekasJPA.Item>  unos = query.getResultList();
+		/*	
+		Collection<com.adnaloy.librosykekas.librosykekasJPA.EditorialFab > unos = manager.createNamedQuery("findAllCustomersWithName")
+	            									.getResultList();
+	    */
+		
+		for(com.adnaloy.librosykekas.librosykekasJPA.Item uno:unos) {
+			
+			Item it = new Item();
+			
+			it.setCode(uno.getCode());
+			it.setTitulo(uno.getTitulo());
+			it.setResena(uno.getResena());
+			
+			if(uno.getEditorialFab()!=null) {
+				ef.setCode(uno.getEditorialFab().getCode());
+				ef.buscaEditorialFab();
+				it.setEditorial(ef);
+			}
+			
+			it.setComentario(uno.getComentario());
+			if(uno.getCategoria()!= null) {
+				cat.setClave(uno.getCategoria().getClave());
+				cat.buscaCategoria();
+				it.setCategoria(cat);
+			}
+			
+
+			items.add(it);
+			
 			
 		}
 		 

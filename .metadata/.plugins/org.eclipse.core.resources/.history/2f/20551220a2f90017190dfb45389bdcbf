@@ -1,0 +1,5 @@
+package com.adnaloy.librosykekas.basics;
+
+public class SQLInjectionEscaper {
+
+}

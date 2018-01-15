@@ -104,7 +104,7 @@ public class IndexWebPage extends HttpServlet {
 			
 			if (isMultipart) {
 				
-				String dirUpload = getServletContext().getInitParameter("DIR_STATIC_FILES");
+				String dirUpload = prm.getDIR_STATIC_FILES();
 
 				
 				FileItemFactory factory = new DiskFileItemFactory();

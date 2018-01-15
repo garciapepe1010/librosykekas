@@ -3,7 +3,7 @@ package com.adnaloy.librosykekas.basics;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import javax.ejb.Local;
 import javax.ejb.LocalBean;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -11,7 +11,7 @@ import javax.naming.NamingException;
 /**
  * Session Bean implementation class Parameters
  */
-@Stateful(mappedName = "Parameters")
+@Stateless(mappedName = "Parameters")
 @Local(ParametersLocal.class)
 @LocalBean
 public class Parameters implements ParametersLocal {

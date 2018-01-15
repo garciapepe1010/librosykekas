@@ -1,5 +1,6 @@
-
 <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -9,23 +10,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Libros y Kekas &mdash; Pagina de Make Garcia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="FREEHTML5.CO" />
-
-  <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
+	<meta name="description" content="Libros y muñecas" />
+	<meta name="keywords" content="Libros, muñecas,viajes" />
+	<meta name="author" content="Make García" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
@@ -104,77 +91,80 @@
 				</div>
 			<div>
 		</section>
-
+		
+		<section id="selector">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+						<div class="intro animate-box">
+							<form action="services" method="post">
+								<div class="form-group row">
+									<div class="col-md-6 field">
+										<label for="categoria">Categoría</label>
+										<select class="form-control"  name="categoria">
+		                                     	<option selected= value="">Ninguna</option>
+		                                     	<c:forEach items="${Cats}" var="item2">
+		                                     		<option value="${item2.clave}">${item2.nombre}</option>
+		                                     	</c:forEach>
+				                        </select>
+									</div>
+									<div class="col-md-6 field">
+										<label for="editorialFab">Editorial/Fábrica</label>
+										<select class="form-control"  name="editorialFab">
+		                                          	<option selected= value="">Ninguna</option>
+		                                          	<c:forEach items="${Efs}" var="item2">
+		                                          		<option value="${item2.code}">${item2.nombre}</option>
+		                                          	</c:forEach>
+				                       </select>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-md-12 field">
+										<label for="titulo">T&iacute;tulo</label>
+										<input type="text" name="titulo" id="titulo" class="form-control">
+									</div>
+		
+								</div>
+								<div class="form-group row">
+									<div class="col-md-12 field">
+										<label for="resena">Rese&ntilde;a</label>
+										<input type="text" name="resena" id="resena" class="form-control">
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-md-12 field">
+										<input type="submit" id="submit" class="btn btn-primary" value="Busca">
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			<div>
+		</section>
 
 		<section id="services">
 			<div class="container">
 				<div class="row">
-				
-				
+				<c:forEach items="${ThreeItems}" var="item" varStatus="myIndex">
 					<div class="col-md-4 animate-box">
 						<div class="service">
 							<div class="service-icon">
 								<i class="icon-command"></i>
 							</div>
-							<h2>Brand Identity</h2>	
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+							<h2>${item.titulo}</h2>	
+							<p>${item.resena}</p>
+							<a href="ficha?code=${item.code}">Mas..</a>
 						</div>
 					</div>
-					
-					
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-drop2"></i>
-							</div>
-							<h2>Web Design &amp; UI</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
+					<c:if test='${(myIndex.index)%3 eq 0 && myIndex.index != 0}'> 
 					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-anchor"></i>
-							</div>
-							<h2>Development &amp; CMS</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-command"></i>
-							</div>
-							<h2>Brand Identity</h2>	
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-drop2"></i>
-							</div>
-							<h2>Web Design &amp; UI</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-anchor"></i>
-							</div>
-							<h2>Development &amp; CMS</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
+					<div class="row">
+					</c:if>
+				</c:forEach>
 				</div>
 			</div>
 		</section>
-
-		
-
-	
 
 		<footer id="footer" role="contentinfo">
 			<div class="container">

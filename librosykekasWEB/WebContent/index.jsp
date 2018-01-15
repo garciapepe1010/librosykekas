@@ -9,23 +9,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Libros y Kekas &mdash; Pagina de Make Garcia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="P&aacute;gina dedicada a mis aficiones" />
-	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
-	<meta name="author" content="Make Garcia" />
-
-  <!--
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FREEHTML5.CO
-
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
+	<meta name="description" content="Libros y muñecas" />
+	<meta name="keywords" content="Libros, muñecas,viajes" />
+	<meta name="author" content="Make García" />
 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>

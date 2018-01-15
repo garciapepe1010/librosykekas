@@ -14,8 +14,4 @@
 	    <!-- The following servlet element defines a servlet called servletA.
      The Java class of this servlet is servlets.servletA -->
      
-    <context-param>
-	    <param-name>HOST_STATIC_FILES</param-name>
-	    <param-value>http://localhost</param-value>
-	</context-param>
 </web-app>

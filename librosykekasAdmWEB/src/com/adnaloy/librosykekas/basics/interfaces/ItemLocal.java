@@ -36,7 +36,17 @@ public interface ItemLocal {
 
 	public void setCategoria(CategoriaLocal categoria);
 
-
+	
+	public String getFiltroTitulo();
+	public void setFiltroTitulo(String filtroTitulo);
+	public String getFiltroResena();
+	public void setFiltroResena(String filtroResena);
+	public String getFiltroEditorial();
+	public void setFiltroEditorial(String filtroEditorial);
+	public String getFiltroCategoria();
+	public void setFiltroCategoria(String filtroCategoria);
+	
+	
 
 	public void reset();
 	public void anado();
@@ -44,5 +54,7 @@ public interface ItemLocal {
 	public void elimino();
 	public ItemLocal buscaItem();
 	public List <ItemLocal> findAllItems();
+	public List <ItemLocal> findThreeItems();
+	public List <ItemLocal> findItems();
 
 }

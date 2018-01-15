@@ -20,9 +20,6 @@
     <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal"/>
     <fullyQualifiedTypeName name="javax.persistence.Query"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.SendMailLocal"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.librosykekasJPA.Categoria"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal"/>
@@ -41,4 +38,10 @@
     <fullyQualifiedTypeName name="javax.ejb.Local"/>
     <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.ParametersLocal"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="javax.ejb.Stateless"/>
+    <fullyQualifiedTypeName name="java.awt.List"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.Collection"/>
+    <fullyQualifiedTypeName name="org.omg.IOP.Codec"/>
 </qualifiedTypeNameHistroy>
