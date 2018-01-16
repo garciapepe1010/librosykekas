@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - domingo-enero-07-2018   
+-- Archivo creado  - lunes-enero-15-2018   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ACERCADE_PAGE_WEB
@@ -123,18 +123,18 @@
 --  DDL for Sequence SEQUENCE_LIBROSYKEKAS
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "LIBROSYKEKAS"."SEQUENCE_LIBROSYKEKAS"  MINVALUE 1 MAXVALUE 99999999999 INCREMENT BY 1 START WITH 41 CACHE 20 NOORDER  NOCYCLE ;
+   CREATE SEQUENCE  "LIBROSYKEKAS"."SEQUENCE_LIBROSYKEKAS"  MINVALUE 1 MAXVALUE 99999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE ;
 REM INSERTING into LIBROSYKEKAS.ACERCADE_PAGE_WEB
 SET DEFINE OFF;
 Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. ','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 
-Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnâ€™t listen.
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnât listen.
 
 She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
 
 Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 
-Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnâ€™t listen.
+Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnât listen.
 
 She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.');
 REM INSERTING into LIBROSYKEKAS.CATEGORIA
@@ -147,10 +147,22 @@ Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('3'
 Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('4','Dirección4','email4@email.com','Nombre4');
 REM INSERTING into LIBROSYKEKAS.INDEX_PAGE_WEB
 SET DEFINE OFF;
-Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTACION,COMENTARIO_1,COMENTARIO_2,COMENTARIO_3,IMG_1) values ('1','libros1.jpg','libros2.jpg','keka2.jpg','keka3.jpg','Soy una enamorada de los libros y las mu&ntilde;ecas.','Comentar&eacute; los libros que he leido o vaya leyendo.','Tengo una colecci&oacute;n de mu&ntilde;ecas y me gusta leer sobre ellas, lo ir&eacute; comentando.','Y porqu&eacute; no mis opiniones acerca de todo lo que me impacta.','keka1.jpg');
+Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTACION,COMENTARIO_1,COMENTARIO_2,COMENTARIO_3,IMG_1) values ('1','9788425352089_229082383.jpg','images_2093953286.jpg','26168301_1889198491391203_7380805246185134430_n_1099132221.jpg','015-118_1__1013282333.jpg','       Pagina dedicada a Libros   Muñecas   y   Viajes
+
+
+
+
+
+
+
+
+','Comentarios sobre libros','Comentarios sobre muñecas','Sobre viajes y rutas','26063260_2060580500887343_8492721455654432818_o_1022569835.jpg');
 REM INSERTING into LIBROSYKEKAS.ITEM
 SET DEFINE OFF;
+Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('61','Reseña 2','23','3','título 2','Comentario 2');
+Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('62','Reseña 3','23','3','título 3','Comentario 3');
 Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('30','reseña11','23','1','titulo1','Comentario1');
+Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('63','Reseña 4','23','3','título 4','Comentario4');
 REM INSERTING into LIBROSYKEKAS.PANTALLA
 SET DEFINE OFF;
 REM INSERTING into LIBROSYKEKAS.USUARIO
@@ -230,15 +242,24 @@ SET DEFINE OFF;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
---  Constraints for Table EDITORIAL_FAB
+--  Constraints for Table PANTALLA
 --------------------------------------------------------
 
-  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" ADD CONSTRAINT "PK_EDITORIAL_FAB" PRIMARY KEY ("CODE")
+  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" ADD CONSTRAINT "PK_PANTALLA" PRIMARY KEY ("CLAVE")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" MODIFY ("CODE" NOT NULL ENABLE);
+  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ITEM
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."ITEM" ADD CONSTRAINT "PK_ITEM" UNIQUE ("CODE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
 --------------------------------------------------------
 --  Constraints for Table ACERCADE_PAGE_WEB
 --------------------------------------------------------
@@ -249,6 +270,26 @@ SET DEFINE OFF;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "LIBROSYKEKAS"."ACERCADE_PAGE_WEB" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table INDEX_PAGE_WEB
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" ADD CONSTRAINT "PK_INDEX_PAGE_WEB" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" MODIFY ("CLAVE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table CATEGORIA
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" ADD CONSTRAINT "PK_CATEGORIAS" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" MODIFY ("CLAVE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table USUARIO_PANTALLA
 --------------------------------------------------------
@@ -271,44 +312,15 @@ SET DEFINE OFF;
   TABLESPACE "USERS"  ENABLE;
   ALTER TABLE "LIBROSYKEKAS"."USUARIO" MODIFY ("CLAVE" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table PANTALLA
+--  Constraints for Table EDITORIAL_FAB
 --------------------------------------------------------
 
-  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" ADD CONSTRAINT "PK_PANTALLA" PRIMARY KEY ("CLAVE")
+  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" ADD CONSTRAINT "PK_EDITORIAL_FAB" PRIMARY KEY ("CODE")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "LIBROSYKEKAS"."PANTALLA" MODIFY ("CLAVE" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table INDEX_PAGE_WEB
---------------------------------------------------------
-
-  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" ADD CONSTRAINT "PK_INDEX_PAGE_WEB" PRIMARY KEY ("CLAVE")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "LIBROSYKEKAS"."INDEX_PAGE_WEB" MODIFY ("CLAVE" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table ITEM
---------------------------------------------------------
-
-  ALTER TABLE "LIBROSYKEKAS"."ITEM" ADD CONSTRAINT "PK_ITEM" UNIQUE ("CODE")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table CATEGORIA
---------------------------------------------------------
-
-  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" ADD CONSTRAINT "PK_CATEGORIAS" PRIMARY KEY ("CLAVE")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "LIBROSYKEKAS"."CATEGORIA" MODIFY ("CLAVE" NOT NULL ENABLE);
+  ALTER TABLE "LIBROSYKEKAS"."EDITORIAL_FAB" MODIFY ("CODE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Ref Constraints for Table ITEM
 --------------------------------------------------------

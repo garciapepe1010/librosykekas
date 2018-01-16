@@ -132,25 +132,25 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                                         </div>
                                         <div class="form-group">
                                             <label>La segunda de las imagenes</label>
-                                            <input type="file" name="imagen_2" onchange="loadFile(event,document.getElementById('output2'))"/>
+                                            <input type="file" name="imagen_2" onchange="loadFile2(event,document.getElementById('output2'))"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_2}</p>
                                              <img id="output2" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/900x1000_${imagen_2}" />
                                         </div>
                                         <div class="form-group">
                                             <label>La tercera de las imagenes</label>
-                                            <input type="file" name="imagen_3" onchange="loadFile(event,document.getElementById('output3'))"/>
+                                            <input type="file" name="imagen_3" onchange="loadFile3(event,document.getElementById('output3'))"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_3}</p>
                                              <img id="output3" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/975x915_${imagen_3}" />
                                         </div>
                                         <div class="form-group">
                                             <label>La cuarta de las imagenes</label>
-                                            <input type="file" name="imagen_4" onchange="loadFile(event,document.getElementById('output4'))"/>
+                                            <input type="file" name="imagen_4" onchange="loadFile4(event,document.getElementById('output4'))"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_4}</p>
                                              <img id="output4" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/910x1620_${imagen_4}" />
                                         </div>
                                         <div class="form-group">
                                             <label>La quinta de las imagenes</label>
-                                            <input type="file" name="imagen_5" onchange="loadFile(event,document.getElementById('output5'))"/>
+                                            <input type="file" name="imagen_5" onchange="loadFile5(event,document.getElementById('output5'))"/>
                                             <p class="help-block">Es la im&aacute;gen : ${imagen_5}</p>
                                              <img id="output5" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/1650x925_${imagen_5}" />
                                         </div>
