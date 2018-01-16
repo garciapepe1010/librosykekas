@@ -123,19 +123,19 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                                             <label>T&iacute;tulo</label>
    
 									         	<c:if  test = "${ItemAccion == 'A'}">
-													<textarea class="form-control" id="titulo" name="titulo" rows="3"></textarea>
+													<input class="form-control" name="titulo"/>
 									         	</c:if>
 									         	<c:if  test = "${ItemAccion == 'E'}">
-													<textarea class="form-control" id="titulo" name="titulo" rows="3">${Item.titulo}</textarea>
+													<input class="form-control" name="titulo" value="${Item.titulo}"/>
 									         	</c:if>
 									         	<c:if  test = "${ItemAccion == 'D'}">
-													<textarea class="form-control" id="titulo" name="titulo" rows="3" editable=false>${Item.titulo}</textarea>
+													<input class="form-control" name="titulo" value="${Item.titulo}" editable=false/>
 									         	</c:if>
 									         	<c:if  test = "${ItemAccion == 'X'}">
-													<textarea class="form-control" id="titulo" name="titulo" rows="3" editable=false>${Item.titulo}</textarea>
+													<input class="form-control" name="titulo" value="${Item.titulo}" editable=false/>
 									         	</c:if>
 
-                                            <p class="help-block">T&iaute;tulo del item</p>
+                                            <p class="help-block">T&icaute;tulo del item</p>
                                         </div>
                                         
                                         
@@ -342,7 +342,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
        <script type="text/javascript">
     	$("#comentario").jqte();
     	$("#resena").jqte();
-    	$("#titulo").jqte();
     </script>
 </body>
 </html>

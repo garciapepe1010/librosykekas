@@ -124,3 +124,4 @@ org.eclipse.debug.core.DebugException: Launch configuration Dali EclipseLink Tab
 2018-01-14 18:04:13,121 [Worker-1] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2018-01-15 03:55:45,451 [Worker-4] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2018-01-15 20:06:23,733 [Worker-16] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2018-01-16 20:07:31,341 [Worker-12] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.

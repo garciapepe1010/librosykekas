@@ -12,16 +12,6 @@
     <link href="${prm.HOST_STATIC_FILES}/assets/css/custom.css" rel="stylesheet" />
      <!-- GOOGLE FONTS-->
    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-   
-      <link type="text/css" rel="stylesheet" href="http://jqueryte.com/css/temp.css" charset="utf-8" >
-	<link type="text/css" rel="stylesheet" href="http://jqueryte.com/css/jquery-te.css" charset="utf-8" >
-	<link type="text/css" rel="stylesheet" href="http://jqueryte.com/css/jquery-te-green.css" charset="utf-8" >
-	<link type="text/css" rel="stylesheet" href="http://jqueryte.com/css/jquery.snippet.min.css" charset="utf-8" >
-	
-	<script type="text/javascript" src="https://code.jquery.com/jquery.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="${prm.HOST_STATIC_FILES}/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="http://jqueryte.com/js/jquery.snippet.min.js" charset="utf-8"></script>
-	<script type="text/javascript" src="http://jqueryte.com/js/site.js" charset="utf-8"></script>
 </head>
 <body>
     <div id="wrapper">
@@ -103,31 +93,31 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                                     
                                     	<div class="form-group" id="presentation">
                                             <label>Acerca de</label>
-                                            <textarea class="form-control" name="acercade" rows="6">${acercade}</textarea>
+                                            <textarea class="form-control" name="acercade" rows="3">${acercade}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Aun m&aacute;s</label>
-                                            <textarea class="form-control" name="aunmas" rows="6">${aunmas}</textarea>
+                                            <textarea class="form-control" name="aunmas" rows="3">${aunmas}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Historia</label>
-                                            <textarea class="form-control" name="historia" rows="6">${historia}</textarea>
+                                            <textarea class="form-control" name="historia" rows="3">${historia}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Inquietudes</label>
-                                            <textarea class="form-control" name="inquietudes" rows="6">${inquietudes}</textarea>
+                                            <textarea class="form-control" name="inquietudes" rows="3">${inquietudes}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Kekas</label>
-                                            <textarea class="form-control" name="kekas" rows="6">${kekas}</textarea>
+                                            <textarea class="form-control" name="kekas" rows="3">${kekas}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Libros</label>
-                                            <textarea class="form-control" name="libros" rows="6">${libros}</textarea>
+                                            <textarea class="form-control" name="libros" rows="3">${libros}</textarea>
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Viajes</label>
-                                            <textarea class="form-control" name="viajes" rows="6">${viajes}</textarea>
+                                            <textarea class="form-control" name="viajes" rows="3">${viajes}</textarea>
                                         </div>
                                         
                                         <button type="submit" class="btn btn-default">Guardar</button>
@@ -150,7 +140,8 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
         </div>
      <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
-
+    <!-- JQUERY SCRIPTS -->
+    <script src="${prm.HOST_STATIC_FILES}/assets/js/jquery-1.10.2.js"></script>
       <!-- BOOTSTRAP SCRIPTS -->
     <script src="${prm.HOST_STATIC_FILES}/assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
@@ -158,9 +149,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
       <!-- CUSTOM SCRIPTS -->
     <script src="${prm.HOST_STATIC_FILES}/assets/js/custom.js"></script>
     
-    <script type="text/javascript">
-    	$(".form-control").jqte();
-    </script>
    
 </body>
 </html>
