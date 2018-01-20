@@ -27,6 +27,17 @@ public interface IndexPageWEBLocal {
 	public String getPresentacion();
 	public void setPresentacion(String presentacion);
 	
+	public String getUrl1();
+	public void setUrl1(String url1);
+	public String getUrl2();
+	public void setUrl2(String url2);
+	public String getUrl3();
+	public void setUrl3(String url3);
+	public String getUrl4();
+	public void setUrl4(String url4);
+	public String getUrl5();
+	public void setUrl5(String url5);
+	
 	
 	public com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal buscoIndexPageWEB();
 	public void actualizo();

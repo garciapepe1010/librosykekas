@@ -10,6 +10,7 @@
 		<class>com.adnaloy.librosykekas.librosykekasJPA.Usuario</class>
 		<class>com.adnaloy.librosykekas.librosykekasJPA.IndexPageWeb</class>
 		<class>com.adnaloy.librosykekas.librosykekasJPA.AcercadePageWeb</class>
+		<class>com.adnaloy.librosykekas.librosykekasJPA.Slider</class>
 		
 		
         <properties>

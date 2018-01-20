@@ -2,6 +2,7 @@ package com.adnaloy.librosykekas.librosykekasWEB.basic;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
 
 /**
  * Servlet implementation class inside
@@ -24,6 +26,8 @@ public class inside extends HttpServlet {
 	AcercaDePageWebLocal ipw;
 	@EJB(mappedName="Parameters")
 	ParametersLocal prm;
+	@EJB(mappedName="Slider")
+	SliderLocal sldr;
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -54,6 +58,9 @@ public class inside extends HttpServlet {
 		
 		prm.cargodatos();
 		request.setAttribute("prm", prm);
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/inside.jsp");
         dispatcher.forward(request, response); 

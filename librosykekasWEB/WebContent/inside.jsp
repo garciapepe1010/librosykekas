@@ -4,6 +4,8 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,6 +47,49 @@
 	<!--[if lt IE 9]>
 	<script src="${prm.HOST_STATIC_FILES}/js/respond.min.js"></script>
 	<![endif]-->
+	
+	        <style>
+            /* jssor slider loading skin spin css */
+            .jssorl-009-spin img {
+                animation-name: jssorl-009-spin;
+                animation-duration: 1.6s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes jssorl-009-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+
+            .jssorb051 .i {position:absolute;cursor:pointer;}
+            .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;}
+            .jssorb051 .i:hover .b {fill-opacity:.7;}
+            .jssorb051 .iav .b {fill-opacity: 1;}
+            .jssorb051 .i.idn {opacity:.3;}
+
+            .jssora051 {display:block;position:absolute;cursor:pointer;}
+            .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+            .jssora051:hover {opacity:.8;}
+            .jssora051.jssora051dn {opacity:.5;}
+            .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+        </style>
+        	<!-- jQuery -->
+			<script src="${prm.HOST_STATIC_FILES}/js/jquery.min.js"></script>
+			<!-- Slider-->
+			<script src="${prm.HOST_STATIC_FILES}/js/jssor.slider.min.js"></script>
+			<!-- jQuery Easing -->
+			<script src="${prm.HOST_STATIC_FILES}/js/jquery.easing.1.3.js"></script>
+			<!-- Bootstrap -->
+			<script src="${prm.HOST_STATIC_FILES}/js/bootstrap.min.js"></script>
+			<!-- Waypoints -->
+			<script src="${prm.HOST_STATIC_FILES}/js/jquery.waypoints.min.js"></script>
 
 	</head>
 	<body>
@@ -52,6 +97,10 @@
 		<header role="banner" id="fh5co-header">
 			<div class="container">
 				<nav class="navbar navbar-default">
+					<div class="row">
+						<c:set var="slider_sldrs" value="${sldrs}" scope="request" />
+						<jsp:include page="slider.jsp" flush="true" />
+					</div>
 					<div class="row">
 						<div class="col-md-3">
 							<div class="fh5co-navbar-brand">
@@ -215,15 +264,6 @@
 		</footer>
 	</div>
 	<!-- END: box-wrap -->
-	
-	<!-- jQuery -->
-	<script src="${prm.HOST_STATIC_FILES}/js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="${prm.HOST_STATIC_FILES}/js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="${prm.HOST_STATIC_FILES}/js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="${prm.HOST_STATIC_FILES}/js/jquery.waypoints.min.js"></script>
 
 	<!-- Main JS (Do not remove) -->
 	<script src="${prm.HOST_STATIC_FILES}/js/main.js"></script>

@@ -16,6 +16,7 @@ import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ItemLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
 
 /**
  * Servlet implementation class services
@@ -31,6 +32,8 @@ public class services extends HttpServlet {
 	EditorialFabLocal ef;
 	@EJB(mappedName="Item")
 	ItemLocal itm;
+	@EJB(mappedName="Slider")
+	SliderLocal sldr;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -61,6 +64,10 @@ public class services extends HttpServlet {
 		request.setAttribute("ThreeItems", threeItems);
 		
 		request.setAttribute("timestamp", new Date());
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/services.jsp");
         dispatcher.forward(request, response); 
 	}
@@ -95,6 +102,9 @@ public class services extends HttpServlet {
 		
 		prm.cargodatos();
 		request.setAttribute("prm", prm);
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/services.jsp");
         dispatcher.forward(request, response); 

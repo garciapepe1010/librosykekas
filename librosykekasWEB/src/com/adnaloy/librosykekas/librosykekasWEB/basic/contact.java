@@ -2,6 +2,7 @@ package com.adnaloy.librosykekas.librosykekasWEB.basic;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
 import com.adnaloy.librosykekas.basics.interfaces.SendMailLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
 
 /**
  * Servlet implementation class contact
@@ -25,6 +27,8 @@ public class contact extends HttpServlet {
 	SendMailLocal sml;
 	@EJB(mappedName="Parameters")
 	ParametersLocal prm;
+	@EJB(mappedName="Slider")
+	SliderLocal sldr;
        
 	private final static String MENSAJE_DE = "Mensaje de : ";
     /**
@@ -44,6 +48,10 @@ public class contact extends HttpServlet {
 		prm.cargodatos();
 		
 		request.setAttribute("prm", prm);
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
+		
 		request.setAttribute("timestamp", new Date());
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/contact.jsp");
         dispatcher.forward(request, response); 
@@ -74,6 +82,8 @@ public class contact extends HttpServlet {
 		
 		sml.doIt();
 		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
 		
 		request.setAttribute("prm", prm);
 		request.setAttribute("resultado", "Mensaje enviado");

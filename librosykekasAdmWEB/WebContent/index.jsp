@@ -60,6 +60,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                     <li>
                         <a href="AcercaDeWebPage"><i class="fa fa-desktop fa-3x"></i>Mant. Acerca De.</a>
                     </li>
+                    <li>
+                        <a  href="Slider"><i class="fa fa-desktop fa-3x"></i>Mant. Slider.</a>
+                    </li>
 
                 </ul>
                

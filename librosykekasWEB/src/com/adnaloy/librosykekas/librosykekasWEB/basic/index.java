@@ -2,6 +2,7 @@ package com.adnaloy.librosykekas.librosykekasWEB.basic;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
 import com.adnaloy.librosykekas.basics.interfaces.IndexPageWEBLocal;
 
 /**
@@ -24,6 +26,8 @@ public class index extends HttpServlet {
 	IndexPageWEBLocal ipw;
 	@EJB(mappedName="Parameters")
 	ParametersLocal prm;
+	@EJB(mappedName="Slider")
+	SliderLocal sldr;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -57,6 +61,9 @@ public class index extends HttpServlet {
 		request.setAttribute("imagen_5", ipw.getImg5());
 		
 		request.setAttribute("prm", prm);
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
 		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
         dispatcher.forward(request, response); 

@@ -1,0 +1,168 @@
+package com.adnaloy.librosykekas.adminuno;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.ejb.EJB;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
+import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
+
+/**
+ * Servlet implementation class Slider
+ */
+@WebServlet(description = "Mant Slider", urlPatterns = { "/Slider" })
+public class Slider extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	@EJB(mappedName="Slider")
+	SliderLocal ef;
+	@EJB(mappedName="Parameters")
+	ParametersLocal prm;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public Slider() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		List efs = ef.findAllSliders();
+		
+		request.setAttribute("ListaSlider", efs);
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SliderListWebPage.jsp");
+        dispatcher.forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+String destino = "/CategoriaEditWebPage.jsp";
+		
+		String accion = request.getParameter("accion");
+		String cod = request.getParameter("clave");
+		
+		if("E".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaSlider();
+			
+			request.setAttribute("Slider", ef);
+			request.setAttribute("SliderAccion","E");
+			
+			destino = "/SliderEditWebPage.jsp";
+			
+		}else if("A".equals(accion)) {
+			
+			request.setAttribute("Slider", ef);
+			request.setAttribute("SliderAccion","A");
+			
+			destino = "/SliderEditWebPage.jsp";
+			
+		}else if("X".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaSlider();
+			
+			request.setAttribute("Slider", ef);
+			request.setAttribute("SliderAccion","X");
+			
+			destino = "/SliderEditWebPage.jsp";
+			
+		}else if("D".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaSlider();
+			
+			request.setAttribute("Categoria", ef);
+			request.setAttribute("SliderAccion","D");
+			
+			destino = "/SliderEditWebPage.jsp";
+			
+		}else if("XE".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaSlider();
+			
+			ef.setImagen(request.getParameter("imagen"));
+			
+			ef.actualizo();
+			
+			ef.reset();
+			
+			List efs = ef.findAllSliders());
+			
+			request.setAttribute("ListaCategoria", efs);
+			
+			destino = "/ListListWebPage.jsp";
+			
+		}else if("XA".equals(accion)) {
+			
+			ef.setImagen(request.getParameter("imagen"));
+			
+			ef.anado();
+			
+			ef.reset();
+			
+			List efs = ef.findAllSliders()
+			
+			request.setAttribute("ListaSlider", efs);
+			
+			destino = "/ListListWebPage.jsp";
+			
+		}else if("XX".equals(accion)) {
+			
+			ef.setClave(cod);
+			ef.buscaSlider();
+			ef.elimino();
+			
+			ef.reset();
+			
+			List efs = ef.findAllSliders();
+			
+			request.setAttribute("ListaSlider", efs);
+			
+			destino = "/ListListWebPage.jsp";
+			
+		}else if("XD".equals(accion)) {
+			
+			ef.setImagen(request.getParameter("imagen"));
+			
+			ef.actualizo();
+			
+			List efs = ef.findAllSliders();
+			
+			request.setAttribute("ListaSlider", efs);
+			
+			destino = "/ListListWebPage.jsp";
+		}
+		
+		prm.cargodatos();
+		request.setAttribute("prm", prm);
+		
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(destino);
+        dispatcher.forward(request, response);
+	}
+
+}

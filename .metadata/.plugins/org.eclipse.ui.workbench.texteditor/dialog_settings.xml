@@ -2,12 +2,13 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="&quot;" key="selection"/>
+		<item value="sldrs" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="sldrs"/>
 			<item value="&quot;"/>
 			<item value="&lt;%=${prm.HOST_STATIC_FILES}%&gt;"/>
 			<item value="}"/>
@@ -22,7 +23,6 @@
 			<item value="accion"/>
 			<item value="EditFabAccion"/>
 			<item value="&lt;c:choose&gt;"/>
-			<item value="&lt;c:choose&gt; "/>
 		</list>
 		<list key="replacehistory">
 			<item value="${prm.HOST_STATIC_FILES}"/>

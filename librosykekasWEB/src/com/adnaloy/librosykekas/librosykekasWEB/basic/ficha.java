@@ -16,6 +16,7 @@ import com.adnaloy.librosykekas.basics.interfaces.CategoriaLocal;
 import com.adnaloy.librosykekas.basics.interfaces.EditorialFabLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ItemLocal;
 import com.adnaloy.librosykekas.basics.interfaces.ParametersLocal;
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
 
 /**
  * Servlet implementation class ficha
@@ -25,9 +26,10 @@ public class ficha extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@EJB(mappedName="Parameters")
 	ParametersLocal prm;
-
 	@EJB(mappedName="Item")
 	ItemLocal itm;
+	@EJB(mappedName="Slider")
+	SliderLocal sldr;
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -58,6 +60,10 @@ public class ficha extends HttpServlet {
 		request.setAttribute("comentario", itm.getComentario());
 		
 		request.setAttribute("timestamp", new Date());
+		
+		List sldrs = sldr.findAllSliders();
+		request.setAttribute("sldrs", sldrs);
+		
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ficha.jsp");
         dispatcher.forward(request, response); 
 		

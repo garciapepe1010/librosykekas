@@ -15,37 +15,50 @@ public class IndexPageWeb implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="INDEX_PAGE_WEB_CLAVE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS")
+	@SequenceGenerator(name="INDEX_PAGE_WEB_CLAVE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="INDEX_PAGE_WEB_CLAVE_GENERATOR")
-	@Column(unique=true, nullable=false, length=20)
 	private String clave;
 
-	@Column(name="COMENTARIO_1", length=250)
+	@Column(name="COMENTARIO_1")
 	private String comentario1;
 
-	@Column(name="COMENTARIO_2", length=250)
+	@Column(name="COMENTARIO_2")
 	private String comentario2;
 
-	@Column(name="COMENTARIO_3", length=250)
+	@Column(name="COMENTARIO_3")
 	private String comentario3;
 
-	@Column(name="IMG_1", length=250)
+	@Column(name="IMG_1")
 	private String img1;
 
-	@Column(name="IMG_2", length=250)
+	@Column(name="IMG_2")
 	private String img2;
 
-	@Column(name="IMG_3", length=250)
+	@Column(name="IMG_3")
 	private String img3;
 
-	@Column(name="IMG_4", length=250)
+	@Column(name="IMG_4")
 	private String img4;
 
-	@Column(name="IMG_5", length=250)
+	@Column(name="IMG_5")
 	private String img5;
 
-	@Column(length=250)
 	private String presentacion;
+
+	@Column(name="URL_1")
+	private String url1;
+
+	@Column(name="URL_2")
+	private String url2;
+
+	@Column(name="URL_3")
+	private String url3;
+
+	@Column(name="URL_4")
+	private String url4;
+
+	@Column(name="URL_5")
+	private String url5;
 
 	public IndexPageWeb() {
 	}
@@ -128,6 +141,46 @@ public class IndexPageWeb implements Serializable {
 
 	public void setPresentacion(String presentacion) {
 		this.presentacion = presentacion;
+	}
+
+	public String getUrl1() {
+		return this.url1;
+	}
+
+	public void setUrl1(String url1) {
+		this.url1 = url1;
+	}
+
+	public String getUrl2() {
+		return this.url2;
+	}
+
+	public void setUrl2(String url2) {
+		this.url2 = url2;
+	}
+
+	public String getUrl3() {
+		return this.url3;
+	}
+
+	public void setUrl3(String url3) {
+		this.url3 = url3;
+	}
+
+	public String getUrl4() {
+		return this.url4;
+	}
+
+	public void setUrl4(String url4) {
+		this.url4 = url4;
+	}
+
+	public String getUrl5() {
+		return this.url5;
+	}
+
+	public void setUrl5(String url5) {
+		this.url5 = url5;
 	}
 
 }

@@ -44,4 +44,5 @@
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="org.omg.IOP.Codec"/>
+    <fullyQualifiedTypeName name="com.adnaloy.librosykekas.basics.interfaces.SliderLocal"/>
 </qualifiedTypeNameHistroy>

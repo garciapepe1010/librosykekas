@@ -1,0 +1,42 @@
+package com.adnaloy.librosykekas.librosykekasJPA;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the SLIDER database table.
+ * 
+ */
+@Entity
+@NamedQuery(name="Slider.findAll", query="SELECT s FROM Slider s")
+public class Slider implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@SequenceGenerator(name="SLIDER_CLAVE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SLIDER_CLAVE_GENERATOR")
+	private String clave;
+
+	private String imagen;
+
+	public Slider() {
+	}
+
+	public String getClave() {
+		return this.clave;
+	}
+
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+
+	public String getImagen() {
+		return this.imagen;
+	}
+
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.adnaloy.librosykekas.basics;
+
+import com.adnaloy.librosykekas.basics.interfaces.SliderLocal;
+import javax.ejb.Local;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class Slider
+ */
+@Stateless(mappedName = "slider")
+@Local(SliderLocal.class)
+@LocalBean
+public class Slider implements SliderLocal {
+
+    /**
+     * Default constructor. 
+     */
+    public Slider() {
+        // TODO Auto-generated constructor stub
+    }
+
+}
