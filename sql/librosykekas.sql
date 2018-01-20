@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - lunes-enero-15-2018   
+-- Archivo creado  - sábado-enero-20-2018   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ACERCADE_PAGE_WEB
@@ -59,7 +59,12 @@
 	"COMENTARIO_1" VARCHAR2(250 BYTE), 
 	"COMENTARIO_2" VARCHAR2(250 BYTE), 
 	"COMENTARIO_3" VARCHAR2(250 BYTE), 
-	"IMG_1" VARCHAR2(250 BYTE)
+	"IMG_1" VARCHAR2(250 BYTE), 
+	"URL_1" VARCHAR2(250 BYTE), 
+	"URL_2" VARCHAR2(250 BYTE), 
+	"URL_3" VARCHAR2(250 BYTE), 
+	"URL_4" VARCHAR2(250 BYTE), 
+	"URL_5" VARCHAR2(250 BYTE)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -88,6 +93,18 @@
   CREATE TABLE "LIBROSYKEKAS"."PANTALLA" 
    (	"CLAVE" VARCHAR2(20 BYTE), 
 	"NOMBRE" VARCHAR2(150 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table SLIDER
+--------------------------------------------------------
+
+  CREATE TABLE "LIBROSYKEKAS"."SLIDER" 
+   (	"CLAVE" VARCHAR2(20 BYTE), 
+	"IMAGEN" VARCHAR2(250 BYTE)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -126,28 +143,20 @@
    CREATE SEQUENCE  "LIBROSYKEKAS"."SEQUENCE_LIBROSYKEKAS"  MINVALUE 1 MAXVALUE 99999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE ;
 REM INSERTING into LIBROSYKEKAS.ACERCADE_PAGE_WEB
 SET DEFINE OFF;
-Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove. ','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-
-Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnât listen.
-
-She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
-
-Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
-
-Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didnât listen.
-
-She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.');
+Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.',' Un apunte que creo necesario añadir. En esta aventura espero contar con la ayuda de dos colegas. Una joven mirada a los libros tanto clasicos,  como actuales. Y una Gran, gran ayuda en lo referente a las kekas  O como ella las llamaria  Moñas','Hasta la fecha he recorrido casi todos los lugares que siempre desee ver Me falta Escocia e Irlanda&nbsp; Puede que al estar mas cerca los dejara para el Final.&nbsp;<p>Me gustaria en esta pagina contar con la experiencia de otros viajeros y si es posible aportar un granito de arena para que otros conozcan preciosos lugares&nbsp;</p>','Los libros han sido siempre mis mas fieles compañeros, razon poe la que me gustaria crear una pagina en la que aparte de compartir comentarios sobre ellos y sobre su lectura. Sirviera tambien de ayuda si alguien busca un libro determinado ayudar a esa persona a localizarlo. Y  quizas tambien haya alguien que lo tenga y pueda intercambiarlo','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Aunque pueda sonar un poco cursi, hubo en tiempos una serie que empezaba asi: "La verdad esta ahi fuera".  Para mi "El Mundo esta ahi fuera"  En los Paises, Ciudades y Monumentos que he conocido  y en los que conocere. Y en las personas que he conocido. Y en las que conocere.<p>Pero aun hay otro mundo un Universo con mayusculas  Que esta aqui adentro en los libros que me hicieron desear conocer esos lugares y a esas personas y me invitaron a viajar. Y en las historias de mis muñecas (perdon de mis moñas) que llegaron a mi atraves de otras personas Y que me gustara conocer. Asi pues si quereis ayudarme con vuestros comentarios,sugerencias e informaciones Bienvenid@s a esta aventura</p><p>Bienvenid@s mi casa Vuestra casa</p>');
 REM INSERTING into LIBROSYKEKAS.CATEGORIA
 SET DEFINE OFF;
+Insert into LIBROSYKEKAS.CATEGORIA (CLAVE,NOMBRE) values ('65','libros varios');
 Insert into LIBROSYKEKAS.CATEGORIA (CLAVE,NOMBRE) values ('23','Categría 1');
 REM INSERTING into LIBROSYKEKAS.EDITORIAL_FAB
 SET DEFINE OFF;
 Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('1','calle patata','patata.com','esa patata');
 Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('3','calle 3','email3@email.com','Nombre3');
 Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('4','Dirección4','email4@email.com','Nombre4');
+Insert into LIBROSYKEKAS.EDITORIAL_FAB (CODE,DIRECCION,EMAIL,NOMBRE) values ('64','sin','sin','RANDON HOUSE');
 REM INSERTING into LIBROSYKEKAS.INDEX_PAGE_WEB
 SET DEFINE OFF;
-Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTACION,COMENTARIO_1,COMENTARIO_2,COMENTARIO_3,IMG_1) values ('1','9788425352089_229082383.jpg','images_2093953286.jpg','26168301_1889198491391203_7380805246185134430_n_1099132221.jpg','015-118_1__1013282333.jpg','       Pagina dedicada a Libros   Muñecas   y   Viajes
+Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTACION,COMENTARIO_1,COMENTARIO_2,COMENTARIO_3,IMG_1,URL_1,URL_2,URL_3,URL_4,URL_5) values ('1','9788425352089_229082383.jpg','images_2093953286.jpg','26168301_1889198491391203_7380805246185134430_n_1099132221.jpg','015-118_1__1013282333.jpg','       Pagina dedicada a Libros   Muñecas   y   Viajes
 
 
 
@@ -156,15 +165,21 @@ Insert into LIBROSYKEKAS.INDEX_PAGE_WEB (CLAVE,IMG_2,IMG_3,IMG_4,IMG_5,PRESENTAC
 
 
 
-','Comentarios sobre libros','Comentarios sobre muñecas','Sobre viajes y rutas','26063260_2060580500887343_8492721455654432818_o_1022569835.jpg');
+','Comentarios sobre libros','Comentarios sobre muñecas','Sobre viajes y rutas','26063260_2060580500887343_8492721455654432818_o_1022569835.jpg',null,null,null,null,null);
 REM INSERTING into LIBROSYKEKAS.ITEM
 SET DEFINE OFF;
 Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('61','Reseña 2','23','3','título 2','Comentario 2');
 Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('62','Reseña 3','23','3','título 3','Comentario 3');
 Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('30','reseña11','23','1','titulo1','Comentario1');
 Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('63','Reseña 4','23','3','título 4','Comentario4');
+Insert into LIBROSYKEKAS.ITEM (CODE,RESENA,CATEGORIA,EDITORIA_FAB,TITULO,COMENTARIO) values ('66','sin leer','65','64','La llave del destino','despues de lectura');
 REM INSERTING into LIBROSYKEKAS.PANTALLA
 SET DEFINE OFF;
+REM INSERTING into LIBROSYKEKAS.SLIDER
+SET DEFINE OFF;
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('67','001_1473247010.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('68','010_635724583.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('70','008_762065006.jpg');
 REM INSERTING into LIBROSYKEKAS.USUARIO
 SET DEFINE OFF;
 REM INSERTING into LIBROSYKEKAS.USUARIO_PANTALLA
@@ -215,6 +230,15 @@ SET DEFINE OFF;
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
 --------------------------------------------------------
+--  DDL for Index PK_SLIDER
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "LIBROSYKEKAS"."PK_SLIDER" ON "LIBROSYKEKAS"."SLIDER" ("CLAVE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
 --  DDL for Index PK_PANTALLA
 --------------------------------------------------------
 
@@ -260,6 +284,17 @@ SET DEFINE OFF;
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table SLIDER
+--------------------------------------------------------
+
+  ALTER TABLE "LIBROSYKEKAS"."SLIDER" ADD CONSTRAINT "PK_SLIDER" PRIMARY KEY ("CLAVE")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "LIBROSYKEKAS"."SLIDER" MODIFY ("IMAGEN" NOT NULL ENABLE);
+  ALTER TABLE "LIBROSYKEKAS"."SLIDER" MODIFY ("CLAVE" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table ACERCADE_PAGE_WEB
 --------------------------------------------------------
