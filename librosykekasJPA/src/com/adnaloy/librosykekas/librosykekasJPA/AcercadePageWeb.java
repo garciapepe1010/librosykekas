@@ -15,9 +15,8 @@ public class AcercadePageWeb implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="ACERCADE_PAGE_WEB_CLAVE_GENERATOR",  sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
+	@SequenceGenerator(name="ACERCADE_PAGE_WEB_CLAVE_GENERATOR", sequenceName="SEQUENCE_LIBROSYKEKAS",initialValue=1, allocationSize=1)
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="ACERCADE_PAGE_WEB_CLAVE_GENERATOR")
-	@Column(unique=true, nullable=false, length=20)
 	private String clave;
 
 	private String acercade;
@@ -28,11 +27,23 @@ public class AcercadePageWeb implements Serializable {
 
 	private String inquietudes;
 
+	@Column(name="INQUIETUDES_IMG")
+	private String inquietudesImg;
+
 	private String kekas;
+
+	@Column(name="KEKAS_IMG")
+	private String kekasImg;
 
 	private String libros;
 
+	@Column(name="LIBROS_IMG")
+	private String librosImg;
+
 	private String viajes;
+
+	@Column(name="VIAJES_IMG")
+	private String viajesImg;
 
 	public AcercadePageWeb() {
 	}
@@ -77,12 +88,28 @@ public class AcercadePageWeb implements Serializable {
 		this.inquietudes = inquietudes;
 	}
 
+	public String getInquietudesImg() {
+		return this.inquietudesImg;
+	}
+
+	public void setInquietudesImg(String inquietudesImg) {
+		this.inquietudesImg = inquietudesImg;
+	}
+
 	public String getKekas() {
 		return this.kekas;
 	}
 
 	public void setKekas(String kekas) {
 		this.kekas = kekas;
+	}
+
+	public String getKekasImg() {
+		return this.kekasImg;
+	}
+
+	public void setKekasImg(String kekasImg) {
+		this.kekasImg = kekasImg;
 	}
 
 	public String getLibros() {
@@ -93,12 +120,28 @@ public class AcercadePageWeb implements Serializable {
 		this.libros = libros;
 	}
 
+	public String getLibrosImg() {
+		return this.librosImg;
+	}
+
+	public void setLibrosImg(String librosImg) {
+		this.librosImg = librosImg;
+	}
+
 	public String getViajes() {
 		return this.viajes;
 	}
 
 	public void setViajes(String viajes) {
 		this.viajes = viajes;
+	}
+
+	public String getViajesImg() {
+		return this.viajesImg;
+	}
+
+	public void setViajesImg(String viajesImg) {
+		this.viajesImg = viajesImg;
 	}
 
 }

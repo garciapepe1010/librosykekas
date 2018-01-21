@@ -6,6 +6,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
+import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -31,6 +32,12 @@ public class AcercaDePageWeb implements AcercaDePageWebLocal {
 	private String kekas;
 	private String libros;
 	private String viajes;
+	
+
+	private String inquietudesImg;
+	private String kekasImg;
+	private String librosImg;
+	private String viajesImg;
 	
 	
     public AcercaDePageWeb() {
@@ -116,7 +123,49 @@ public class AcercaDePageWeb implements AcercaDePageWebLocal {
 	public void setViajes(String viajes) {
 		this.viajes = viajes;
 	}
+	
+	
     
+	public String getInquietudesImg() {
+		return inquietudesImg;
+	}
+
+
+	public void setInquietudesImg(String inquietudesImg) {
+		this.inquietudesImg = inquietudesImg;
+	}
+
+
+	public String getKekasImg() {
+		return kekasImg;
+	}
+
+
+	public void setKekasImg(String kekasImg) {
+		this.kekasImg = kekasImg;
+	}
+
+
+	public String getLibrosImg() {
+		return librosImg;
+	}
+
+
+	public void setLibrosImg(String librosImg) {
+		this.librosImg = librosImg;
+	}
+
+
+	public String getViajesImg() {
+		return viajesImg;
+	}
+
+
+	public void setViajesImg(String viajesImg) {
+		this.viajesImg = viajesImg;
+	}
+
+
 	@TransactionAttribute(TransactionAttributeType.NEVER)
 	public com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal buscoAcercaDePageWEB() {
 			/*
@@ -136,6 +185,11 @@ public class AcercaDePageWeb implements AcercaDePageWebLocal {
 			this.setLibros(uno.getLibros());
 			this.setViajes(uno.getViajes());
 			
+			this.setInquietudesImg(uno.getInquietudesImg());
+			this.setKekasImg(uno.getKekasImg());
+			this.setLibrosImg(uno.getLibrosImg());
+			this.setViajesImg(uno.getViajesImg());
+			
 
 			return this;
 	}
@@ -153,6 +207,11 @@ public class AcercaDePageWeb implements AcercaDePageWebLocal {
 		IPWJPA.setKekas(this.getKekas());
 		IPWJPA.setLibros(this.getLibros());
 		IPWJPA.setViajes(this.getViajes());
+		
+		IPWJPA.setInquietudesImg(this.getInquietudesImg());
+		IPWJPA.setKekasImg(this.getKekasImg());
+		IPWJPA.setLibrosImg(this.getLibrosImg());
+		IPWJPA.setViajesImg(this.getViajesImg());
 		
 	    //tx.begin();
 	    manager.persist(IPWJPA);

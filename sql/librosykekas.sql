@@ -1,5 +1,5 @@
 --------------------------------------------------------
--- Archivo creado  - sábado-enero-20-2018   
+-- Archivo creado  - domingo-enero-21-2018   
 --------------------------------------------------------
 --------------------------------------------------------
 --  DDL for Table ACERCADE_PAGE_WEB
@@ -13,7 +13,11 @@
 	"LIBROS" VARCHAR2(500 BYTE), 
 	"KEKAS" VARCHAR2(500 BYTE), 
 	"INQUIETUDES" VARCHAR2(500 BYTE), 
-	"HISTORIA" VARCHAR2(4000 BYTE)
+	"HISTORIA" VARCHAR2(4000 BYTE), 
+	"VIAJES_IMG" VARCHAR2(255 BYTE), 
+	"LIBROS_IMG" VARCHAR2(255 BYTE), 
+	"KEKAS_IMG" VARCHAR2(255 BYTE), 
+	"INQUIETUDES_IMG" VARCHAR2(255 BYTE)
    ) SEGMENT CREATION IMMEDIATE 
   PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
@@ -143,7 +147,7 @@
    CREATE SEQUENCE  "LIBROSYKEKAS"."SEQUENCE_LIBROSYKEKAS"  MINVALUE 1 MAXVALUE 99999999999 INCREMENT BY 1 START WITH 81 CACHE 20 NOORDER  NOCYCLE ;
 REM INSERTING into LIBROSYKEKAS.ACERCADE_PAGE_WEB
 SET DEFINE OFF;
-Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.',' Un apunte que creo necesario añadir. En esta aventura espero contar con la ayuda de dos colegas. Una joven mirada a los libros tanto clasicos,  como actuales. Y una Gran, gran ayuda en lo referente a las kekas  O como ella las llamaria  Moñas','Hasta la fecha he recorrido casi todos los lugares que siempre desee ver Me falta Escocia e Irlanda&nbsp; Puede que al estar mas cerca los dejara para el Final.&nbsp;<p>Me gustaria en esta pagina contar con la experiencia de otros viajeros y si es posible aportar un granito de arena para que otros conozcan preciosos lugares&nbsp;</p>','Los libros han sido siempre mis mas fieles compañeros, razon poe la que me gustaria crear una pagina en la que aparte de compartir comentarios sobre ellos y sobre su lectura. Sirviera tambien de ayuda si alguien busca un libro determinado ayudar a esa persona a localizarlo. Y  quizas tambien haya alguien que lo tenga y pueda intercambiarlo','Far far away, behind the word, far from the countries Vokalia','Far far away, behind the word, far from the countries Vokalia','Aunque pueda sonar un poco cursi, hubo en tiempos una serie que empezaba asi: "La verdad esta ahi fuera".  Para mi "El Mundo esta ahi fuera"  En los Paises, Ciudades y Monumentos que he conocido  y en los que conocere. Y en las personas que he conocido. Y en las que conocere.<p>Pero aun hay otro mundo un Universo con mayusculas  Que esta aqui adentro en los libros que me hicieron desear conocer esos lugares y a esas personas y me invitaron a viajar. Y en las historias de mis muñecas (perdon de mis moñas) que llegaron a mi atraves de otras personas Y que me gustara conocer. Asi pues si quereis ayudarme con vuestros comentarios,sugerencias e informaciones Bienvenid@s a esta aventura</p><p>Bienvenid@s mi casa Vuestra casa</p>');
+Insert into LIBROSYKEKAS.ACERCADE_PAGE_WEB (CLAVE,ACERCADE,AUNMAS,VIAJES,LIBROS,KEKAS,INQUIETUDES,HISTORIA,VIAJES_IMG,LIBROS_IMG,KEKAS_IMG,INQUIETUDES_IMG) values ('1','Insaciable: Viajera insaciable, lectora insaciable y en cuanto a kekas Insaciableeeeeee.',' Un apunte que creo necesario añadir. En esta aventura espero contar con la ayuda de dos colegas. Una joven mirada a los libros tanto clasicos,  como actuales. Y una Gran, gran ayuda en lo referente a las kekas  O como ella las llamaria  Moñas','010_1776728817.jpg','008_419168569.jpg','006_350740177.jpg','001_1964519821.jpg','Aunque pueda sonar un poco cursi, hubo en tiempos una serie que empezaba asi: "La verdad esta ahi fuera".  Para mi "El Mundo esta ahi fuera"  En los Paises, Ciudades y Monumentos que he conocido  y en los que conocere. Y en las personas que he conocido. Y en las que conocere.<p>Pero aun hay otro mundo un Universo con mayusculas  Que esta aqui adentro en los libros que me hicieron desear conocer esos lugares y a esas personas y me invitaron a viajar. Y en las historias de mis muñecas (perdon de mis moñas) que llegaron a mi atraves de otras personas Y que me gustara conocer. Asi pues si quereis ayudarme con vuestros comentarios,sugerencias e informaciones Bienvenid@s a esta aventura</p><p>Bienvenid@s mi casa Vuestra casa</p>','010_346829697.jpg','009_1792906699.jpg','007_219981796.jpg','001_1720589258.jpg');
 REM INSERTING into LIBROSYKEKAS.CATEGORIA
 SET DEFINE OFF;
 Insert into LIBROSYKEKAS.CATEGORIA (CLAVE,NOMBRE) values ('65','libros varios');
@@ -177,9 +181,10 @@ REM INSERTING into LIBROSYKEKAS.PANTALLA
 SET DEFINE OFF;
 REM INSERTING into LIBROSYKEKAS.SLIDER
 SET DEFINE OFF;
-Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('67','001_1473247010.jpg');
-Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('68','010_635724583.jpg');
-Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('70','008_762065006.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('67','13131277_1217837831560193_4231396799267400711_o_506737560.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('68','diy262b_4656979.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('70','015-118_1__846044629.jpg');
+Insert into LIBROSYKEKAS.SLIDER (CLAVE,IMAGEN) values ('71','700_FO126922730_36d6673823a9ac59c8ef6645220e773f_1370455225.jpg');
 REM INSERTING into LIBROSYKEKAS.USUARIO
 SET DEFINE OFF;
 REM INSERTING into LIBROSYKEKAS.USUARIO_PANTALLA

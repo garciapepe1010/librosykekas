@@ -22,6 +22,16 @@
 	<script type="text/javascript" src="${prm.HOST_STATIC_FILES}/js/jquery-te-1.4.0.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="http://jqueryte.com/js/jquery.snippet.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="http://jqueryte.com/js/site.js" charset="utf-8"></script>
+	
+	<script>
+	  var loadFile = function(event, output) {
+	    var reader = new FileReader();
+	    reader.onload = function(){
+	      output.src = reader.result;
+	    };
+	    reader.readAsDataURL(event.target.files[0]);
+	  };
+	</script>
 </head>
 <body>
     <div id="wrapper">
@@ -102,7 +112,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                             <div class="row">
                                 <div class="col-md-6">
                                     <h3>Mant P&aacute;gina de Acerca de</h3>
-                                    <form role="form"  method="post" action="AcercaDeWebPage" >
+                                    <form role="form"  method="post" action="AcercaDeWebPage" enctype="multipart/form-data" >
                                     
                                     	<div class="form-group" id="presentation">
                                             <label>Acerca de</label>
@@ -120,17 +130,41 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="LogOut" class="btn 
                                             <label>Inquietudes</label>
                                             <textarea class="form-control" name="inquietudes" rows="6">${inquietudes}</textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Inquietudes imagen</label>
+                                            <input type="file" name="inquietudesImg" onchange="loadFile(event,document.getElementById('output1'))"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${inquietudesImg}</p>
+                                             <img id="output1" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/350x275_${inquietudesImg}" />
+                                        </div>
                                         <div class="form-group" id="presentation">
                                             <label>Kekas</label>
                                             <textarea class="form-control" name="kekas" rows="6">${kekas}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kekas imagen</label>
+                                            <input type="file" name="kekasImg" onchange="loadFile(event,document.getElementById('output2'))"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${kekasImg}</p>
+                                             <img id="output2" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/350x275_${kekasImg}" />
                                         </div>
                                         <div class="form-group" id="presentation">
                                             <label>Libros</label>
                                             <textarea class="form-control" name="libros" rows="6">${libros}</textarea>
                                         </div>
+                                        <div class="form-group">
+                                            <label>Libros imagen</label>
+                                            <input type="file" name="librosImg" onchange="loadFile(event,document.getElementById('output3'))"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${librosImg}</p>
+                                             <img id="output3" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/350x275_${librosImg}" />
+                                        </div>
                                         <div class="form-group" id="presentation">
                                             <label>Viajes</label>
                                             <textarea class="form-control" name="viajes" rows="6">${viajes}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Viajes imagen</label>
+                                            <input type="file" name="viajesImg" onchange="loadFile(event,document.getElementById('output4'))"/>
+                                            <p class="help-block">Es la im&aacute;gen : ${viajesImg}</p>
+                                             <img id="output4" height="42" width="42" src="${prm.HOST_STATIC_FILES}/images/350x275_${viajesImg}" />
                                         </div>
                                         
                                         <button type="submit" class="btn btn-default">Guardar</button>

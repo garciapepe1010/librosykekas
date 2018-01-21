@@ -167,7 +167,7 @@
 					<div class="post-entry">
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-2.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/350x275_${viajesImg}" alt="Viajes"></a>
 								<div>
 									<h3><a href="#">Viajes</a></h3>
 									<p>${viajes}</p>
@@ -177,7 +177,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-1.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/350x275_${librosImg}" alt="Libros"></a>
 								<div>
 									<h3><a href="#">Libros</a></h3>
 									<p>${libros}</p>
@@ -187,7 +187,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-2.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/350x275_${kekasImg}" alt="Kekas"></a>
 								<div>
 									<h3><a href="#">Kekas</a></h3>
 									<p>${kekas}</p>
@@ -197,7 +197,7 @@
 						</div>
 						<div class="col-md-6">
 							<div class="post animate-box">
-								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/work-1.jpg" alt="Product"></a>
+								<a href="#"><img src="${prm.HOST_STATIC_FILES}/images/350x275_${inquietudesImg}" alt="Inquietudes"></a>
 								<div>
 									<h3><a href="#">Inquietudes</a></h3>
 									<p>${inquietudes}</p>

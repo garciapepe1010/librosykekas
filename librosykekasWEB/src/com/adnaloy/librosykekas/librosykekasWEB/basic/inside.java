@@ -56,6 +56,11 @@ public class inside extends HttpServlet {
 		request.setAttribute("libros", ipw.getLibros());
 		request.setAttribute("viajes", ipw.getViajes());
 		
+		request.setAttribute("inquietudesImg", ipw.getInquietudesImg());
+		request.setAttribute("kekasImg", ipw.getKekasImg());
+		request.setAttribute("librosImg", ipw.getLibrosImg());
+		request.setAttribute("viajesImg", ipw.getViajesImg());
+		
 		prm.cargodatos();
 		request.setAttribute("prm", prm);
 		

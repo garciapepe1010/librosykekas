@@ -205,7 +205,7 @@ public class Slider extends HttpServlet {
 			ef.setClave(cod);
 			ef.buscaSlider();
 			
-			request.setAttribute("Categoria", ef);
+			request.setAttribute("Slider", ef);
 			request.setAttribute("SliderAccion","D");
 			
 			destino = "/SliderEditWebPage.jsp";
@@ -223,7 +223,7 @@ public class Slider extends HttpServlet {
 			
 			List efs = ef.findAllSliders();
 			
-			request.setAttribute("ListaCategoria", efs);
+			request.setAttribute("ListaSlider", efs);
 			
 			destino = "/SliderListWebPage.jsp";
 			

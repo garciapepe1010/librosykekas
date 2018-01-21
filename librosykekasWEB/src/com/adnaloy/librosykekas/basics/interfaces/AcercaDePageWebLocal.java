@@ -24,6 +24,17 @@ public interface AcercaDePageWebLocal {
 	public void setLibros(String libros);
 	public String getViajes();
 	public void setViajes(String viajes);
+	
+	public String getInquietudesImg();
+	public void setInquietudesImg(String inquietudesImg);
+	public String getKekasImg();
+	public void setKekasImg(String kekasImg);
+	public String getLibrosImg();
+	public void setLibrosImg(String librosImg);
+	public String getViajesImg();
+	public void setViajesImg(String viajesImg);
+	
+	
 	public com.adnaloy.librosykekas.basics.interfaces.AcercaDePageWebLocal buscoAcercaDePageWEB();
 	public void actualizo();
 
